@@ -17,6 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+
+
+
+
+
+// Database Functions will be below Here
+
 Route::get('/db-test', function() {
     try {
         \DB::connection()->getPDO();
@@ -30,4 +39,11 @@ Route::get('/db-test', function() {
 Route::get('/db-migrate', function() {
    Artisan::call('migrate:fresh');
     echo Artisan::output();
+});
+
+//For whatever event feeds we may need, use this format
+//Route::get('/events-feed', [CalendarController::class, 'test']);
+
+Route::fallback(function() {
+    return view('unknown');
 });
