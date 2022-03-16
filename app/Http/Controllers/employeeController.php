@@ -64,7 +64,7 @@ class employeeController extends Controller
       $cou = array();
       foreach ($createOrUpdateArray as $k=>$v)
       {
-        $cou[$k] = {$v};
+        $cou[$k] = $$v;
       }
       var_dump($cou);
       $res = employee::create($cou);
@@ -108,7 +108,7 @@ class employeeController extends Controller
       $cou = array();
       foreach ($createOrUpdateArray as $k=>$v)
       {
-        $cou[$k] = {$v};
+        $cou[$k] = $$v;
       }
       var_dump($cou);
       $res = employee::where('id',$id)->update($cou);
