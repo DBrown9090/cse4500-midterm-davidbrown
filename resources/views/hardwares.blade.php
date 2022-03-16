@@ -27,7 +27,7 @@
           <td>{{ $r->id }}</td>
           @foreach($valid as $k=>$v)
           <td>{{ $r->{$k} }}</td>
-          #endforeach
+          @endforeach
           <td><a href="{{ route($n.'.show',[(string)$m=>$r->id])}}">View</a></td>
         </tr>
         @endforeach
