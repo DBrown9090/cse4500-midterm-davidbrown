@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 
 class hwcategoryController extends Controller
 {
+
+  /*
+  Category Table Layout:
+  id - Name
+
+
+  */
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +32,7 @@ class hwcategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('hwcategories.create');
     }
 
     /**
@@ -36,7 +43,14 @@ class hwcategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $validated = $request->validate([
+         'name' => 'required',
+      ]);
+
+      $cat = hwcategory::create([
+           'name' => $validated->name,
+      ]);
+      return $this->index();
     }
 
     /**
@@ -47,7 +61,8 @@ class hwcategoryController extends Controller
      */
     public function show($id)
     {
-        //
+      $cat= hwcategory::findOrFail($id);
+      return view('hwcategories.show',compact('cat'));
     }
 
     /**
@@ -58,7 +73,8 @@ class hwcategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+      $cat-> hwcategory::findOrFail($id);
+      return view('hwcategories.edit',compact('cat'));
     }
 
     /**
@@ -70,7 +86,12 @@ class hwcategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $validated = $request->validate([
+         'name' => 'required',
+      ]);
+
+      $cat = hwcategory::findorFail($id)->update(['name'=>$validated->name]);
+      return $this->show($id);
     }
 
     /**
@@ -81,6 +102,7 @@ class hwcategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $deleted = hwcategory::where('id', $id)->delete();
+        return $this->index();
     }
 }

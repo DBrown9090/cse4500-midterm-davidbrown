@@ -230,8 +230,8 @@ return [
             'text' => 'search',
         ],
         [
-            'text' => 'To Do\'s',
-            'url'  => 'todos',
+            'text' => 'Hardware Categories',
+            'url'  => 'hwcategories',
             'icon' => 'fas fa-fw fa-file',
         ],
         [

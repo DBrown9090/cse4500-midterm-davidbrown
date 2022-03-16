@@ -13,9 +13,9 @@ use App\Http\Controllers\hwcategoryController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/{name}', function () {
     return view('welcome');
-});
+})->where('name', '|home');
 
 Route::resource('/hwcategories', hwcategoryController::class);
 
