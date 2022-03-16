@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\hardware;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Schema;
 
 class hardwareController extends Controller
 {
@@ -39,11 +38,10 @@ class hardwareController extends Controller
 
     public function index()
     {
-      $res = array();
-      if (Schema::hasTable('hardware')) {
+      if (hardware::all()->exists())
+      {
         $res = hardware::all()->sortBy('id');
       }
-
       $valid = self::$validationArray;
       $n = self::$controllerName;
       $m = self::$tableName;
