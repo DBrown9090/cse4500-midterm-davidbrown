@@ -11,6 +11,7 @@
   <h3><div><a href="{{route('hwcategories.edit', ['hwcategory'=>$cat->id]) }}" class="btn btn-primary" >Edit</a></div></h3>
   <h3><div>
     <form class="delete" action="{{route('hwcategories.destroy', ['hwcategory'=>$cat->id])}}" method="delete">
+      @method('delete')
       @csrf
       <input type="hidden" name="_method" value="DELETE">
       <input type="submit" value="Delete Category">
