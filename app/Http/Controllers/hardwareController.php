@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\hardware;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Schema;
 
 class hardwareController extends Controller
 {
