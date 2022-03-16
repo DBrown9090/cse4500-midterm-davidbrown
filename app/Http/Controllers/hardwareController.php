@@ -109,7 +109,7 @@ class hardwareController extends Controller
       $n = self::$controllerName;
       $m = self::$tableName;
       $o = self::$controlName;
-      return view(self::$controllerName.'.edit',compact('res','valid','n','m','o'));
+      return view(self::$controllerName.'.edit',compact('res','valid','n','m','o', 'cat', 'man'));
     }
 
     /**
