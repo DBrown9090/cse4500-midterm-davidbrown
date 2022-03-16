@@ -29,7 +29,7 @@
       *Notes History:
       Note ID - Unit ID - Service(provided) -(Related)Software - Notes
 
-      *Hardware Category Table:
+      **Hardware Category Table:
       Category ID - Category Name
 
       For money:
