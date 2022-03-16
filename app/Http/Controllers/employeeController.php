@@ -39,7 +39,7 @@ class employeeController extends Controller
     public function index()
     {
       $res = employee::all();
-      return view($controllerName,compact('res'));
+      return view(self::$controllerName,compact('res'));
     }
 
     /**
@@ -49,7 +49,7 @@ class employeeController extends Controller
      */
     public function create()
     {
-        return view($controllerName.'.create');
+        return view(self::$controllerName.'.create');
     }
 
     /**
@@ -60,9 +60,9 @@ class employeeController extends Controller
      */
     public function store(Request $request)
     {
-      $validated = $request->validate($validationArray);
+      $validated = $request->validate(self::$validationArray);
       $cou = array();
-      foreach ($createOrUpdateArray as $k=>$v)
+      foreach (self::$createOrUpdateArray as $k=>$v)
       {
         $cou[$k] = $$v;
       }
@@ -80,7 +80,7 @@ class employeeController extends Controller
     public function show($id)
     {
       $res= employee::findOrFail($id);
-      return view($controllerName.'.show',compact('res'));
+      return view(self::$controllerName.'.show',compact('res'));
     }
 
     /**
@@ -92,7 +92,7 @@ class employeeController extends Controller
     public function edit($id)
     {
       $res = employee::findOrFail($id);
-      return view($controllerName.'.edit',compact('res'));
+      return view(self::$controllerName.'.edit',compact('res'));
     }
 
     /**
@@ -104,9 +104,9 @@ class employeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $validated = $request->validate($validationArray);
+      $validated = $request->validate(self::$validationArray);
       $cou = array();
-      foreach ($createOrUpdateArray as $k=>$v)
+      foreach (self::$createOrUpdateArray as $k=>$v)
       {
         $cou[$k] = $$v;
       }
