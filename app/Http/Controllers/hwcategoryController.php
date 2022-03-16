@@ -11,9 +11,13 @@ class hwcategoryController extends Controller
   /*
   Category Table Layout:
   id - Name
-
-
   */
+
+      public function test()
+    {
+      $cat = hwcategory::all();
+      return $cat->toJson();
+    }
     /**
      * Display a listing of the resource.
      *
@@ -48,7 +52,7 @@ class hwcategoryController extends Controller
       ]);
 
       $cat = hwcategory::create([
-           'Name' => $validated->name,
+           'Name' => $validated->Name,
       ]);
       return $this->index();
     }

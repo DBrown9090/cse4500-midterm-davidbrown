@@ -43,7 +43,7 @@ Route::get('/db-migrate', function() {
 });
 
 //For whatever event feeds we may need, use this format
-//Route::get('/events-feed', [CalendarController::class, 'test']);
+Route::get('/events-feed', [hwcategoryController::class, 'test']);
 
 Route::fallback(function() {
     return view('unknown');
