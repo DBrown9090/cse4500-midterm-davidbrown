@@ -22,8 +22,8 @@
     @method('patch')
     @csrf
     <x-adminlte-input name="Name" label="Name" value="{{$res->Name}}"/>
-    <x-adminlte-input name="Name" label="email" value="{{$res->email}}"/>
-    <x-adminlte-input name="Name" label="phone" value="{{$res->phone}}"/>
+    <x-adminlte-input name="email" label="email" value="{{$res->email}}"/>
+    <x-adminlte-input name="phone" label="phone" value="{{$res->phone}}"/>
     <x-adminlte-button type="Submit" label="Submit" />
 </form>
 @stop
