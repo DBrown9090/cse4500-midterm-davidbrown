@@ -15,7 +15,7 @@
         <tr>
           <th style="width: 10px">#</th>
           @foreach($valid as $k=>$v)
-          <th>{{ {$k} }}</th>
+          <th>{{ $k }}</th>
           @endforeach
           <th>View</th>
         </tr>
