@@ -24,7 +24,7 @@ class employeeController extends Controller
         'phone' => 'required|digits:10',
         'email' => 'required|email|unique:employees',
      ];
-     public static $createOrUpdateArray = [
+     $createOrUpdateArray = [
           'Name' => &$request->Name,
           'phone' => &$request->phone,
           'email' => &$request->email
