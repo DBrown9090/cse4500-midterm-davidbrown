@@ -3,19 +3,19 @@
 @section('title', 'Users')
 
 @section('content_header')
-    <h1>User List</h1>
+    <h1>{{ $o; }} List</h1>
 @stop
 
 @section('content')
 <div class="card">
-  <p>This lists all of the Users available</p>
+  <p>This lists all of the {{ $o; }}s available</p>
   <div class="card-body">
     <table id="table" class="table table-bordered">
       <thead>
         <tr>
           <th style="width: 10px">#</th>
           @foreach($valid as $k=>$v)
-          <th>{$k}</th>
+          <th>{{ {$k} }}</th>
           @endforeach
           <th>View</th>
         </tr>
@@ -36,7 +36,7 @@
     </table>
   </div>
 </div>
-<a href="{{ route($n.'.create') }} " class="btn btn-primary" >Create New Category</a>
+<a href="{{ route($n.'.create') }} " class="btn btn-primary" >Create New {{ $o; }}</a>
 @stop
 
 @section('js')

@@ -25,6 +25,7 @@ class employeeController extends Controller
         'phone' => ['required','digits:10'],
         'email' => ['required','email','unique:employees'],
      ];
+     public static $controlName = 'User';
 
     public function test()
     {
@@ -38,7 +39,8 @@ class employeeController extends Controller
       $valid = self::$validationArray;
       $n = self::$controllerName;
       $m = self::$tableName;
-      return view(self::$controllerName,compact('res', 'valid','n','m'));
+      $o = self::$controlName;
+      return view(self::$controllerName,compact('res', 'valid','n','m','o'));
     }
 
     /**
@@ -48,7 +50,11 @@ class employeeController extends Controller
      */
     public function create()
     {
-        return view(self::$controllerName.'.create');
+      $valid = self::$validationArray;
+      $n = self::$controllerName;
+      $m = self::$tableName;
+      $o = self::$controlName;
+      return view(self::$controllerName.'.create', compact('valid','n','m','o'));
     }
 
     /**
@@ -78,7 +84,11 @@ class employeeController extends Controller
     public function show($id)
     {
       $res= employee::findOrFail($id);
-      return view(self::$controllerName.'.show',compact('res'));
+      $valid = self::$validationArray;
+      $n = self::$controllerName;
+      $m = self::$tableName;
+      $o = self::$controlName;
+      return view(self::$controllerName.'.show',compact('res', 'valid', 'n', 'm','o'));
     }
 
     /**
@@ -90,7 +100,11 @@ class employeeController extends Controller
     public function edit($id)
     {
       $res = employee::findOrFail($id);
-      return view(self::$controllerName.'.edit',compact('res'));
+      $valid = self::$validationArray;
+      $n = self::$controllerName;
+      $m = self::$tableName;
+      $o = self::$controlName;
+      return view(self::$controllerName.'.edit',compact('res','valid','n','m','o'));
     }
 
     /**

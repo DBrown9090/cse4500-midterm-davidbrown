@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'User Creation')
+@section('title', '{{ $o; }} Creation')
 
 @section('content_header')
-    <h1>User Creation</h1>
+    <h1>{{ $o;}} Creation</h1>
 @stop
 
 @if ($errors->any())
@@ -17,11 +17,15 @@
 @endif
 
 @section('content')
-<form method="post" action="{{ route('employees.store') }}" >
+<form method="post" action="{{ route($n.'.store') }}" >
     @csrf
-    <x-adminlte-input name="Name" label="User Name" />
-    <x-adminlte-input name="email" label="User Email" />
-    <x-adminlte-input name="phone" label="User Phone" />
+    @foreach($valid as $k=>$v)
+    <x-adminlte-input name="{{ $k; }}" label="{{ $o; }} {{ $k; }}" />
+    @endforeach
     <x-adminlte-button type="Submit" label="Submit" />
 </form>
 @stop
+
+<?php /*   <x-adminlte-input name="Name" label="User Name" />
+    <x-adminlte-input name="email" label="User Email" />
+    <x-adminlte-input name="phone" label="User Phone" />*/ ?>
