@@ -24,11 +24,6 @@ class employeeController extends Controller
         'phone' => 'required|digits:10',
         'email' => 'required|email|unique:employees',
      ];
-     public static $createOrUpdateArray = [
-          'Name' => 'Name',
-          'phone' => 'phone',
-          'email' => 'email'
-     ];
 
     public function test()
     {
@@ -62,9 +57,9 @@ class employeeController extends Controller
     {
       $validated = $request->validate(self::$validationArray);
       $req = array();
-      foreach (self::$createOrUpdateArray as $k=>$v)
+      foreach (self::$validationArray as $k=>$v)
       {
-        $req[$k] = $request->{$v};
+        $req[$k] = $request->{$k};
       }
       $res = employee::create($req);
       return $this->index()->with('message', 'User Created!');
@@ -105,9 +100,9 @@ class employeeController extends Controller
     {
       $validated = $request->validate(self::$validationArray);
       $req = array();
-      foreach (self::$createOrUpdateArray as $k=>$v)
+      foreach (self::$validationArray as $k=>$v)
       {
-        $req[$k] = $request->{$v};
+        $req[$k] = $request->{$k};
       }
       $res = employee::where('id',$id)->update($req);
       return $this->show($id);
