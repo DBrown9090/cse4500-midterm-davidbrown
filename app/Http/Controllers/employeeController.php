@@ -22,7 +22,7 @@ class employeeController extends Controller
      public static $validationArray = [
         'Name' => 'required',
         'phone' => ['required','digits:10'],
-        'email' => ['required','email','unique:employee'],
+        'email' => ['required','email','unique:employees'],
      ];
 
     public function test()
