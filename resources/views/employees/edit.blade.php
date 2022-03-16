@@ -7,9 +7,6 @@
 @stop
 
 @section('content')
-<pre><?php if (!empty($request)) { var_dump($request);} ?></pre>
-<pre><?php if (!empty($req)) { var_dump($req);} ?></pre>
-<pre><?php if (!empty($res)) {var_dump($res);} ?></pre>
   <h2>User Number {{ $res->id; }}</h2>
 <form method="post" action="{{ route('employees.update', ['employee'=>$res->id]) }}" >
     @method('patch')

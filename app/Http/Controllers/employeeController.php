@@ -33,7 +33,7 @@ class employeeController extends Controller
 
     public function index()
     {
-      $res = employee::all();
+      $res = employee::all()->sortBy('id');
       return view(self::$controllerName,compact('res'));
     }
 
@@ -98,13 +98,13 @@ class employeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $validated = $request->validate(self::$validationArray);
+      //$validated = $request->validate(self::$validationArray);
       $req = array();
       foreach (self::$validationArray as $k=>$v)
       {
         $req[$k] = $request->{$k};
       }
-      $res = employee::where('id',$id)->update($req);
+      $ret = employee::where('id',$id)->update($req);
       return $this->show($id)->with('message', 'User Edited!');
     }
 
