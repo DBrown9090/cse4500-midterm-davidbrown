@@ -77,7 +77,7 @@ class hwcategoryController extends Controller
      */
     public function edit($id)
     {
-      $cat-> hwcategory::findOrFail($id);
+      $cat = hwcategory::findOrFail($id);
       return view('hwcategories.edit',compact('cat'));
     }
 

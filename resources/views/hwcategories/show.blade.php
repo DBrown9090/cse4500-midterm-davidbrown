@@ -8,14 +8,14 @@
 
 @section('content')
   <h2>{{ $cat->id; }} - {{ $cat->Name; }}</h2>
-  <div><a href="{{route('hwcategories.edit', ['hwcategory'=>$cat->id]) }}" class="btn btn-primary" >Edit</a></div>
-  <div>
+  <h3><div><a href="{{route('hwcategories.edit', ['hwcategory'=>$cat->id]) }}" class="btn btn-primary" >Edit</a></div></h3>
+  <h3><div>
     <form class="delete" action="{{route('hwcategories.destroy', ['hwcategory'=>$cat->id])}}" method="POST">
       @csrf
       <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="Delete User">
+      <input type="submit" value="Delete Category">
     </form>
-  </div>
+  </div></h3>
 @stop
 
 @section('js')
