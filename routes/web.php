@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\hwcategoryController;
 use App\Http\Controllers\employeeController;
 use App\Http\Controllers\purchaseController;
+use App\Http\Controllers\manufacturerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +33,9 @@ Route::resource('/purchases', purchaseController::class);
 
 Route::get('/purchases/restore/{id}', [purchaseController::class, 'restore']);
 
+Route::resource('/manufacturers', manufacturerController::class);
 
+Route::get('/manufacturers/restore/{id}', [manufacturerController::class, 'restore']);
 
 
 
