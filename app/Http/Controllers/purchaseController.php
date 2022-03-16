@@ -40,7 +40,7 @@ class purchaseController extends Controller
       $n = self::$controllerName;
       $m = self::$tableName;
       $o = self::$controlName;
-      $res['Price'] /= 100;
+      $res->Price /= 100;
       return view(self::$controllerName,compact('res', 'valid','n','m','o'));
     }
 
@@ -72,7 +72,7 @@ class purchaseController extends Controller
       {
         $req[$k] = $request->{$k};
       }
-      $req['Price'] *= 100;
+      $req->Price *= 100;
       $res = purchase::create($req);
       return $this->index();
     }
@@ -90,7 +90,7 @@ class purchaseController extends Controller
       $n = self::$controllerName;
       $m = self::$tableName;
       $o = self::$controlName;
-      $res['Price'] /= 100;
+      $res->Price /= 100;
       return view(self::$controllerName.'.show',compact('res', 'valid', 'n', 'm','o'));
     }
 
@@ -107,7 +107,7 @@ class purchaseController extends Controller
       $n = self::$controllerName;
       $m = self::$tableName;
       $o = self::$controlName;
-      $res['Price'] /= 100;
+      $res->Price /= 100;
       return view(self::$controllerName.'.edit',compact('res','valid','n','m','o'));
     }
 
@@ -126,7 +126,7 @@ class purchaseController extends Controller
       {
         $req[$k] = $request->{$k};
       }
-      $req['Price'] *= 100;
+      $req->Price *= 100;
       $ret = purchase::where('id',$id)->update($req);
       return $this->show($id);
     }
