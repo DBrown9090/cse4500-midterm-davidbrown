@@ -32,13 +32,13 @@ class hardwareController extends Controller
 
     public function toJSON()
     {
-      $res = hardware::all()->leftJoin('hwcategories', 'hardwares.CategoryID', '=', 'hwcategories.id')->leftJoin('manufacturers', 'hardwares.ManufacturerID', '=', 'manufacturers.id')->sortBy('id');
+      $res = hardware::all()->sortBy('id');
       return $res->toJson();
     }
 
     public function index()
     {
-      $res = hardware::all()->leftJoin('hwcategories', 'hardwares.CategoryID', '=', 'hwcategories.id')->leftJoin('manufacturers', 'hardwares.ManufacturerID', '=', 'manufacturers.id')->sortBy('id');
+      $res = hardware::all()->sortBy('id');
       $valid = self::$validationArray;
       $n = self::$controllerName;
       $m = self::$tableName;

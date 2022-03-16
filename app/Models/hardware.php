@@ -13,4 +13,14 @@ class hardware extends Model
 
     protected $fillable = ['Name','ManufacturerID','CategoryID','CPU','RAM','Storage'];
 
+    public function cat()
+    {
+      return $this->hasOne(hwcategory::class);
+    }
+
+    public function man()
+    {
+      return $this->hasOne(manufacturer::class);
+    }
+
 }
