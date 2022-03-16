@@ -32,7 +32,7 @@ class hardwareController extends Controller
 
     public function toJSON()
     {
-      $res = hardware::with('man')->with('cat')->sortBy('id');
+      $res = hardware::all()->sortBy('id');
       return $res->man->toJson();
     }
 

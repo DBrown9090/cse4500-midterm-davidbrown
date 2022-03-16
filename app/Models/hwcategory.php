@@ -15,6 +15,6 @@ class hwcategory extends Model
 
     public function hardware()
     {
-      return $this->belongsTo(hardware::class);
+      return $this->hasMany(hardware::class);
     }
 }
