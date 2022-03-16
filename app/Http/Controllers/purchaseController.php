@@ -71,7 +71,7 @@ class purchaseController extends Controller
       {
         $req[$k] = $request->{$k};
       }
-      $req->Price *= 100;
+      $req['Price'] *= 100;
       $res = purchase::create($req);
       return $this->index();
     }
@@ -124,7 +124,7 @@ class purchaseController extends Controller
       {
         $req[$k] = $request->{$k};
       }
-      $req->Price *= 100;
+      $req['Price'] *= 100;
       $ret = purchase::where('id',$id)->update($req);
       return $this->show($id);
     }
