@@ -87,11 +87,13 @@ class hardwareController extends Controller
     public function show($id)
     {
       $res= hardware::findOrFail($id);
+      $cat = $res->cat();
+      $man = $res->man();
       $valid = self::$validationArray;
       $n = self::$controllerName;
       $m = self::$tableName;
       $o = self::$controlName;
-      return view(self::$controllerName.'.show',compact('res', 'valid', 'n', 'm','o'));
+      return view(self::$controllerName.'.show',compact('res', 'valid', 'n', 'm','o', 'cat', 'man'));
     }
 
     /**
