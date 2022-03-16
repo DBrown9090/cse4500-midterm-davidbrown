@@ -13,11 +13,12 @@ class hwcategoryController extends Controller
   id - Name
   */
 
-      public function test()
+      public function toJSON()
     {
       $cat = hwcategory::all()->sortBy('id');
       return $cat->toJson();
     }
+
     /**
      * Display a listing of the resource.
      *

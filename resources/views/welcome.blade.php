@@ -14,7 +14,7 @@
       *List units here.
       Unit ID - Hardware specs(ID) - Unit Manufacturer(ID) - Current User(ID) - Purchase Info(ID) - Notes(From note table, !include)
 
-      *Manufacturers Table:
+      **Manufacturers Table:
       Manufacturer ID - Manufacturer Name - Manufacturer (Sales) Contact Info - Manufacturer Tech (Support) Contact Info
 
       *Hardwares Table:

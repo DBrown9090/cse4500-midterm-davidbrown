@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\manufacturer;
+use App\Models\hardware;
 use Illuminate\Http\Request;
 
-class manufacturerController extends Controller
+class hardwareController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,24 +18,27 @@ class manufacturerController extends Controller
      id - Name - email - phone
      */
 
-     public static $controllerName = 'manufacturers';
-     public static $tableName = 'manufacturer';
+     public static $controllerName = 'hardwares';
+     public static $tableName = 'hardware';
      public static $validationArray = [
-        'Name' => ['required','unique:manufacturers'],
-        'SalesInfo' => ['required'],
-        'SupportInfo' => ['required'],
+        'Name' => ['required','unique:hardwares'],
+        'ManufacturerID' => ['required'],
+        'CategoryID' => ['required'],
+        'CPU' => ['required'],
+        'RAM' => ['required'],
+        'Storage' => ['required'],
      ];
-     public static $controlName = 'Manufacturer';
+     public static $controlName = 'Hardware';
 
     public function toJSON()
     {
-      $res = manufacturer::all()->sortBy('id');
+      $res = hardware::all()->sortBy('id');
       return $res->toJson();
     }
 
     public function index()
     {
-      $res = manufacturer::all()->sortBy('id');
+      $res = hardware::all()->sortBy('id');
       $valid = self::$validationArray;
       $n = self::$controllerName;
       $m = self::$tableName;
@@ -71,7 +74,7 @@ class manufacturerController extends Controller
       {
         $req[$k] = $request->{$k};
       }
-      $res = manufacturer::create($req);
+      $res = hardware::create($req);
       return $this->index();
     }
 
@@ -83,7 +86,7 @@ class manufacturerController extends Controller
      */
     public function show($id)
     {
-      $res= manufacturer::findOrFail($id);
+      $res= hardware::findOrFail($id);
       $valid = self::$validationArray;
       $n = self::$controllerName;
       $m = self::$tableName;
@@ -99,7 +102,7 @@ class manufacturerController extends Controller
      */
     public function edit($id)
     {
-      $res = manufacturer::findOrFail($id);
+      $res = hardware::findOrFail($id);
       $valid = self::$validationArray;
       $n = self::$controllerName;
       $m = self::$tableName;
@@ -122,7 +125,7 @@ class manufacturerController extends Controller
       {
         $req[$k] = $request->{$k};
       }
-      $ret = manufacturer::where('id',$id)->update($req);
+      $ret = hardware::where('id',$id)->update($req);
       return $this->show($id);
     }
 
@@ -134,13 +137,13 @@ class manufacturerController extends Controller
      */
     public function destroy($id)
     {
-      $deleted = manufacturer::where('id', $id)->delete();
+      $deleted = hardware::where('id', $id)->delete();
       return $this->index();
     }
 
     public function restore($id)
     {
-        $restored = manufacturer::where('id', $id)->restore();
+        $restored = hardware::where('id', $id)->restore();
         return $this->index();
     }
 }

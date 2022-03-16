@@ -10,6 +10,11 @@ class hwcategory extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    
+
     protected $fillable = ['Name'];
+
+    public function hardware()
+    {
+      return $this->belongsToMany(hardware::class);
+    }
 }

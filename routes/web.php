@@ -5,6 +5,7 @@ use App\Http\Controllers\hwcategoryController;
 use App\Http\Controllers\employeeController;
 use App\Http\Controllers\purchaseController;
 use App\Http\Controllers\manufacturerController;
+use App\Http\Controllers\hardwareController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,7 +38,9 @@ Route::resource('/manufacturers', manufacturerController::class);
 
 Route::get('/manufacturers/restore/{id}', [manufacturerController::class, 'restore']);
 
+Route::resource('/hardwares', hardwareController::class);
 
+Route::get('/hardwares/restore/{id}', [hardwareController::class, 'restore']);
 
 // Database Functions will be below Here
 

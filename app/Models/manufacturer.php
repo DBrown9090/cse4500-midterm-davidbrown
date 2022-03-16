@@ -12,4 +12,9 @@ class manufacturer extends Model
     use SoftDeletes;
 
     protected $fillable = ['Name','SalesInfo','SupportInfo'];
+
+    public function hw()
+    {
+      return $this->belongsToMany(hardware::class);
+    }
 }
