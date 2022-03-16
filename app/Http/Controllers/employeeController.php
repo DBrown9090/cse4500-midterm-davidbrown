@@ -64,10 +64,8 @@ class employeeController extends Controller
       $req = array();
       foreach (self::$createOrUpdateArray as $k=>$v)
       {
-        $req->{$k} = $request->{$v};
+        $req[$k] = $request->{$v};
       }
-      var_dump($request);
-      var_dump($req);
       $res = employee::create($req);
       return $this->index()->with('message', 'User Created!');
     }
