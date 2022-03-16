@@ -24,7 +24,7 @@
           <td>{{ $r->Name }}</td>
           <td>{{ $r->email}}</td>
           <td>{{ $r->phone}}</td>
-          <td><a href="{{ route('employees.show',['hwcategory'=>$r->id])}}">View</a></td>
+          <td><a href="{{ route('employees.show',['employee'=>$r->id])}}">View</a></td>
         </tr>
         @endforeach
 
