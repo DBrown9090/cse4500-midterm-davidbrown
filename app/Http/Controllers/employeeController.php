@@ -21,8 +21,8 @@ class employeeController extends Controller
      public static $controllerName = 'employees';
      public static $validationArray = [
         'Name' => 'required',
-        'phone' => 'required|digits:10',
-        'email' => 'required|email|unique:employees',
+        'phone' => ['required','digits:10'],
+        'email' => ['required','email','unique:employees'],
      ];
 
     public function test()
@@ -98,7 +98,7 @@ class employeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-      //$validated = $request->validate(self::$validationArray);
+      $validated = $request->validate(self::$validationArray);
       $req = array();
       foreach (self::$validationArray as $k=>$v)
       {

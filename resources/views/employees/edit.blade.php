@@ -6,6 +6,16 @@
     <h1>Edit User</h1>
 @stop
 
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 @section('content')
   <h2>User Number {{ $res->id; }}</h2>
 <form method="post" action="{{ route('employees.update', ['employee'=>$res->id]) }}" >
