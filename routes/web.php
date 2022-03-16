@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\hwcategoryController;
 use App\Http\Controllers\employeeController;
+use App\Http\Controllers\purchaseController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +27,10 @@ Route::get('/hwcategories/restore/{id}', [hwcategoryController::class, 'restore'
 Route::resource('/employees', employeeController::class);
 
 Route::get('/employees/restore/{id}', [employeesController::class, 'restore']);
+
+Route::resource('/purchases', purchaseController::class);
+
+Route::get('/purchases/restore/{id}', [purchaseController::class, 'restore']);
 
 
 
