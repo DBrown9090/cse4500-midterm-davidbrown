@@ -25,9 +25,9 @@ class employeeController extends Controller
         'email' => 'required|email|unique:employees',
      ];
      public static $createOrUpdateArray = [
-          'Name' => $$request->Name,
-          'phone' => $$request->phone,
-          'email' => $$request->email
+          'Name' => '$request->Name',
+          'phone' => '$request->phone',
+          'email' => '$request->email'
      ];
 
     public function test()
@@ -61,8 +61,13 @@ class employeeController extends Controller
     public function store(Request $request)
     {
       $validated = $request->validate($validationArray);
-
-      $res = employee::create($createOrUpdateArray);
+      $cou = array();
+      foreach ($createOrUpdateArray as $k=>$v)
+      {
+        $cou[$k] = {$v};
+      }
+      var_dump($cou);
+      $res = employee::create($cou);
       return $this->index()->with('message', 'User Created!');
     }
 
@@ -100,8 +105,13 @@ class employeeController extends Controller
     public function update(Request $request, $id)
     {
       $validated = $request->validate($validationArray);
-
-      $res = employee::where('id',$id)->update($createOrUpdateArray);
+      $cou = array();
+      foreach ($createOrUpdateArray as $k=>$v)
+      {
+        $cou[$k] = {$v};
+      }
+      var_dump($cou);
+      $res = employee::where('id',$id)->update($cou);
       return $this->show($id);
     }
 
