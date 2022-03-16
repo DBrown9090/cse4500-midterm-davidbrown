@@ -44,11 +44,11 @@ class hwcategoryController extends Controller
     public function store(Request $request)
     {
       $validated = $request->validate([
-         'name' => 'required',
+         'Name' => 'required',
       ]);
 
       $cat = hwcategory::create([
-           'name' => $validated->name,
+           'Name' => $validated->name,
       ]);
       return $this->index();
     }
@@ -87,10 +87,10 @@ class hwcategoryController extends Controller
     public function update(Request $request, $id)
     {
       $validated = $request->validate([
-         'name' => 'required',
+         'Name' => 'required',
       ]);
 
-      $cat = hwcategory::findorFail($id)->update(['name'=>$validated->name]);
+      $cat = hwcategory::findorFail($id)->update(['Name'=>$validated->Name]);
       return $this->show($id);
     }
 

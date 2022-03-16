@@ -15,7 +15,7 @@
 @section('content')
 <form method="post" action="{{ route('hwcategories.update', ['id'=>$cat->id]) }}" >
     @csrf
-    <x-adminlte-input name="name" label="Name" />
+    <x-adminlte-input name="Name" label="Name" />
     <x-adminlte-button type="Submit" label="Submit" />
 </form>
 @stop
