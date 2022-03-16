@@ -8,9 +8,9 @@
 
 @section('content')
   <h2>{{ $cat->id; }} - {{ $cat->Name; }}</h2>
-  <div><a href="{{route('hwcategories.edit', ['id'=>$cat->id]) }}" class="btn btn-primary" >Edit</a></div>
+  <div><a href="{{route('hwcategories.edit', ['hwcategory'=>$cat->id]) }}" class="btn btn-primary" >Edit</a></div>
   <div>
-    <form class="delete" action="{{route('hwcategories.delete', ['id'=>$cat->id])}}" method="POST">
+    <form class="delete" action="{{route('hwcategories.delete', ['hwcategory'=>$cat->id])}}" method="POST">
       @csrf
       <input type="hidden" name="_method" value="DELETE">
       <input type="submit" value="Delete User">

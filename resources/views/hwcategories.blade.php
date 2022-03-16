@@ -22,8 +22,8 @@
         <tr>
           <td>{{ $cat->id }}</td>
           <td>{{ $cat->Name }}</td>
-          <td><a href="{{ route('hwcategories.show',['id'=>$cat->id])}}">View</a></td>
-          <td><a href="{{ route('hwcategories.delete', ['id'=>$cat->id])}}">Delete</a></td>
+          <td><a href="{{ route('hwcategories.show',['hwcategory'=>$cat->id])}}">View</a></td>
+          <td><a href="{{ route('hwcategories.delete', ['hwcategory'=>$cat->id])}}">Delete</a></td>
         </tr>
         @endforeach
 
