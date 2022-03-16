@@ -88,8 +88,8 @@ class hardwareController extends Controller
     public function show($id)
     {
       $res= hardware::findOrFail($id);
-      $res->cat = DB::table('hwcategories')->where('id', $res->hwcategory_id);
-      $res->man = DB::table('manufacturers')->where('id', $res->manufacturer_id);
+      $res->cat = DB::table('hwcategories')->find($res->hwcategory_id);
+      $res->man = DB::table('manufacturers')->find($res->manufacturer_id);
       $valid = self::$validationArray;
       $n = self::$controllerName;
       $m = self::$tableName;
