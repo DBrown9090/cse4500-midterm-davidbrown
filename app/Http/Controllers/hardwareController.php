@@ -40,8 +40,8 @@ class hardwareController extends Controller
     public function index()
     {
       $res = hardware::all()->sortBy('id');
-      $res->cat = DB::table('hwcategories');
-      $res->man = DB::table('manufacturers');
+      $res->cat = DB::table('hwcategories')->get();
+      $res->man = DB::table('manufacturers')->get();
       $valid = self::$validationArray;
       $n = self::$controllerName;
       $m = self::$tableName;

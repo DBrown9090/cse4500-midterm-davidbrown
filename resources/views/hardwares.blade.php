@@ -27,7 +27,9 @@
           <td>{{ $r->id }}</td>
           @foreach($valid as $k=>$v)
           <?php if ($k == 'manufacturer_id') { ?>
+            <td>Manufacturer</td>
           <?php } else if ($k == 'hwcategory_id') { ?>
+            <td>Category</td>
           <?php } else { ?>
             <td>{{ $r->{$k} }}</td>
           <?php } ?>
