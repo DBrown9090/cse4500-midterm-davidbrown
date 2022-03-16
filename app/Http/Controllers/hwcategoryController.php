@@ -94,7 +94,7 @@ class hwcategoryController extends Controller
          'Name' => 'required',
       ]);
 
-      $cat = hwcategory::findorFail($id)->update(['Name'=>$request->Name]);
+      $cat = hwcategory::where('id',$id)->update(['Name'=>$request->Name]);
       return $this->show($id);
     }
 
