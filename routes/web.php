@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/hwcategories', hwcategories::class);
+Route::resource('/hwcategories', hwcategoryController::class);
 
 
 
