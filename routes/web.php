@@ -19,6 +19,8 @@ Route::get('/{name}', function () {
 
 Route::resource('/hwcategories', hwcategoryController::class);
 
+Route::get('/hwcategories/restore/{id}', [hwcategoryController::class, 'restore']);
+
 
 
 

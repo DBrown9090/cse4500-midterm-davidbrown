@@ -109,4 +109,10 @@ class hwcategoryController extends Controller
         $deleted = hwcategory::where('id', $id)->delete();
         return $this->index();
     }
+
+    public function restore($id)
+    {
+        $restored = hwcategory::where('id', $id)->restore();
+        return $this->index();
+    }
 }
