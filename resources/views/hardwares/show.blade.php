@@ -10,7 +10,15 @@
   <h2>Id: {{ $res->id; }}</h2>
   <?php dump($res); ?>
   @foreach($valid as $k=>$v)
-  <h2>{{ $k; }}:<pre>{{ $res->{$k}; }}</pre></h2>
+  <?php if (in_array($k, ['manufacturer_id', 'hwcategory_id'])) {
+    if ($k == 'manufacturer_id') { ?>
+      <h2>Manufacturer:<pre><a href="{{route('manufacturers.view',['id'=>$res->{$k}->id])}}">{{ $res->{$k}->Name}}</a></pre></h2>
+    <?php } else { ?>
+      <h2>Category:<pre><a href="{{route('hwcategories.view',['id'=>$res->{$k}->id])}}">{{ $res->{$k}->Name}}</a></pre></h2>
+    <?php }
+    } else { ?>
+    <h2>{{ $k; }}:<pre>{{ $res->{$k}; }}</pre></h2>
+  <?php } ?>
   @endforeach
   <h3><div><a href="{{route($n.'.edit', [(string)$m=>$res->id]) }}" class="btn btn-primary" >Edit</a></div></h3>
   <h3><div>
