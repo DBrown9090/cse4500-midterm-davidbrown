@@ -24,6 +24,7 @@
 
         @foreach($res AS $r)
         <tr>
+          <td>{{ $r->id }}</td>
           @foreach($r as $k=>$v)
           <td>{{ $v }}</td>
           @endforeach
