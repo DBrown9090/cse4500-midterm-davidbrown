@@ -7,9 +7,9 @@
 @stop
 
 @section('content')
-<pre>{{var_dump($request);}}</pre>
-<pre>{{var_dump($req);}}</pre>
-<pre>{{var_dump($res);}}</pre>
+<pre>{{if (!empty($request) { var_dump($request);} }}</pre>
+<pre>{{if (!empty($req) { var_dump($req);} }}</pre>
+<pre>{{if (!empty($res) {var_dump($res);} }}</pre>
 
   <h2>{{ $res->id; }}</h2>
   <h2>{{ $res->Name; }}</h2>
