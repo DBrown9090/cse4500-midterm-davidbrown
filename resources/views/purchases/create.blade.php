@@ -20,11 +20,11 @@
 <form method="post" action="{{ route($n.'.store') }}" >
     @csrf
     @foreach($valid as $k=>$v)
+    <x-adminlte-input name="{{ $k; }}" label="{{ $k; }}"
     <?php if (!in_array('date',$v)) { ?>
-      <x-adminlte-input name="{{ $k; }}" label="{{ $k; }}" />
-    <?php } else { ?>
-      <x-adminlte-input-date name="{{ $k; }}" label="{{ $k; }}" />
+      type="date"
     <?php } ?>
+    />
     @endforeach
     <x-adminlte-button type="Submit" label="Submit" />
 </form>
