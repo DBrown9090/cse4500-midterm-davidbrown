@@ -52,7 +52,7 @@ class hwcategoryController extends Controller
       ]);
 
       $cat = hwcategory::create([
-           'Name' => $validated->Name,
+           'Name' => $request->Name,
       ]);
       return $this->index();
     }
@@ -94,7 +94,7 @@ class hwcategoryController extends Controller
          'Name' => 'required',
       ]);
 
-      $cat = hwcategory::findorFail($id)->update(['Name'=>$validated->Name]);
+      $cat = hwcategory::findorFail($id)->update(['Name'=>$request->Name]);
       return $this->show($id);
     }
 
