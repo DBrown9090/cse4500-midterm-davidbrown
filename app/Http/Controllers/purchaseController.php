@@ -22,7 +22,7 @@ class purchaseController extends Controller
     public static $tableName = 'purchase';
     public static $validationArray = [
       'Invoice' => ['required','integer','numeric'],
-      'Price' => ['required', 'integer','numeric'],
+      'Price' => ['required', 'numeric'],
       'PurchaseDate' => ['required', 'date'],
     ];
     public static $controlName = 'Purchase';

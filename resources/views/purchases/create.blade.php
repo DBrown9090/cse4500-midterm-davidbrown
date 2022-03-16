@@ -22,7 +22,7 @@
     @foreach($valid as $k=>$v)
     <?php if (in_array('date',$v)) { ?>
       <x-adminlte-input name="{{ $k; }}" label="{{ $k; }}" type="date" />
-    <?php } else if (in_array('integer', $v)) {
+    <?php } else if (in_array('numeric', $v)) {
       $step = "0";
       if ($k == 'Price') { $step = "0.01";}
     ?>
