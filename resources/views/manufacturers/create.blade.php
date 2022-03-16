@@ -20,7 +20,11 @@
 <form method="post" action="{{ route($n.'.store') }}" >
     @csrf
     @foreach($valid as $k=>$v)
+    <?php if (in_array($k, ['SalesInfo', 'SupportInfo'])) { ?>
+      <x-adminlte-textarea name="{{ $k; }}" label="{{ $o; }} {{ $k; }}" />
+    <?php } else { ?>
     <x-adminlte-input name="{{ $k; }}" label="{{ $o; }} {{ $k; }}" />
+    <?php } ?>
     @endforeach
     <x-adminlte-button type="Submit" label="Submit" />
 </form>
