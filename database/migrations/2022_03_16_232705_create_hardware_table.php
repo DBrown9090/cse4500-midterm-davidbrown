@@ -16,15 +16,14 @@ class CreateHardwareTable extends Migration
         Schema::create('hardware', function (Blueprint $table) {
             $table->id();
             $table->string('Name');
-            $table->integer('ManufacturerID');
-            $table->integer('CategoryID');
+            $table->foreignId('manufacturer_id')->constrained('manufacturers');
+            $table->foreignId('hwcategory_id')->constrained('hwcategories');
             $table->string('CPU');
             $table->string('RAM');
             $table->string('Storage');
             $table->softDeletes();
             $table->timestamps();
-            $table->foreign('ManufacturerID')->references('id')->on('manufacturers');
-            $table->foreign('CategoryID')->references('id')->on('hwcategories');
+
         });
     }
 
