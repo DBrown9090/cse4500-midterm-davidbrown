@@ -10,7 +10,7 @@
     <p>Welcome to the Electronic Equipment Organizer. This app will allow you to track equipment,
       Keep Notes on maintenance, and view who has checked out each unit.
     </p>
-    <p>
+    <p><pre>
       *List units here.
       Unit ID - Hardware specs(ID) - Unit Manufacturer(ID) - Current User(ID) - Purchase Info(ID) - Notes(From note table, !include)
 
@@ -23,7 +23,7 @@
       **Employees Table:
       User ID - Name - User Email - User Phone#
 
-      *Purchases Table:
+      **Purchases Table:
       Purchase ID - Invoice - Price - PurchaseDate
 
       *Notes History:
@@ -31,13 +31,7 @@
 
       **Hardware Category Table:
       Category ID - Category Name
-
-      For money:
-      class product extends model
-        pub funct getPriceAttribute()
-          return $this->attributes['price']/100;
-        pub funct setPriceAttribute()
-          $this->attributes['price'] = $value*100;
+    </pre>
     </p>
 @stop
 
