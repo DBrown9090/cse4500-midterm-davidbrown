@@ -8,11 +8,6 @@
 
 @section('content')
   <h2>Category Number {{ $cat->id; }}</h2>
-  <div><a href="{{route('hwcategories.edit', ['hwcategory'=>$cat->id]) }}" class="btn btn-primary" >Edit</a></div>
-@stop
-
-
-@section('content')
 <form method="post" action="{{ route('hwcategories.update', ['hwcategory'=>$cat->id]) }}" >
     @csrf
     <x-adminlte-input name="Name" label="Name" />
