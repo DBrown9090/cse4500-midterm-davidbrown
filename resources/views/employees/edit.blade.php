@@ -7,9 +7,6 @@
 @stop
 
 @section('content')
-{{      dd($request);
-      dd($req);
-      dd($res);}}
   <h2>User Number {{ $res->id; }}</h2>
 <form method="post" action="{{ route('employees.update', ['employee'=>$res->id]) }}" >
     @method('patch')
