@@ -12,9 +12,9 @@
   @foreach($valid as $k=>$v)
   <?php if (in_array($k, ['manufacturer_id', 'hwcategory_id'])) {
     if ($k == 'manufacturer_id') { ?>
-      <h2>Manufacturer:<pre><a href="{{route('manufacturers.show',['manufacturer'=>1])}}">{{ $res->{$k}}}</a></pre></h2>
+      <h2>Manufacturer:<pre><a href="{{ route('manufacturers.show', ['manufacturer'=>1] ) }}">{{ $res->{$k} }}</a></pre></h2>
     <?php } else { ?>
-      <h2>Category:<pre><a href="{{route('hwcategories.show',['hwcategories'=>1])}}">{{ $res->{$k}}}</a></pre></h2>
+      <h2>Category:<pre><a href="{{ route('hwcategories.show', ['hwcategories'=>1] ) }}">{{ $res->{$k} }}</a></pre></h2>
     <?php }
     } else { ?>
     <h2>{{ $k; }}:<pre>{{ $res->{$k}; }}</pre></h2>
