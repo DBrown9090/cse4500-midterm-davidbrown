@@ -7,15 +7,10 @@
 @stop
 
 @section('content')
-{{echo '<pre>';
-var_dump($request);
-echo '</pre><pre>';
-var_dump($req);
-echo '</pre><pre>';
-var_dump($res);
-echo '</pre>';
-exit;
-die; }}
+<pre>{{var_dump($request);}}</pre>
+<pre>{{var_dump($req);}}</pre>
+<pre>{{var_dump($res);}}</pre>
+
   <h2>{{ $res->id; }}</h2>
   <h2>{{ $res->Name; }}</h2>
   <h2>{{ $res->email;}}</h2>
