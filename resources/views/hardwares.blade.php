@@ -26,7 +26,11 @@
         <tr>
           <td>{{ $r->id }}</td>
           @foreach($valid as $k=>$v)
-          <td>{{ $v }}</td>
+          <?php if (!is_array($v)) { ?>
+            <td>{{ $v }}</td>
+          <?php } else { ?>
+            <td>{{ dump($v); }}</td>
+          <?php } ?>
           @endforeach
           <td><a href="{{ route($n.'.show',[(string)$m=>$r->id])}}">View</a></td>
         </tr>
