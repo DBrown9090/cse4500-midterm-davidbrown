@@ -105,9 +105,6 @@ class employeeController extends Controller
         $req[$k] = $request->{$k};
       }
       $res = employee::where('id',$id)->update($req);
-      var_dump($request);
-      var_dump($req);
-      var_dump($res);
       return $this->show($id)->with('message', 'User Edited!');
     }
 
