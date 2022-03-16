@@ -235,13 +235,13 @@ return [
             'icon' => 'fas fa-fw fa-file',
         ],
         [
-            'text' => 'Calendar',
-            'url'  => 'calendar',
+            'text' => 'Users',
+            'url'  => 'employees',
             'icon' => 'fas fa-fw fa-calendar-alt',
         ],
         [
-            'text' => 'Board',
-            'url'  => 'board',
+            'text' => 'Manufacturers',
+            'url'  => 'manufacturers',
             'icon' => 'fas fa-fw fa-columns',
         ],
     ],

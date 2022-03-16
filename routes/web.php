@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\hwcategoryController;
+use App\Http\Controllers\employeeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +22,9 @@ Route::resource('/hwcategories', hwcategoryController::class);
 
 Route::get('/hwcategories/restore/{id}', [hwcategoryController::class, 'restore']);
 
+Route::resource('/employees', employeeController::class);
 
+Route::get('/employees/restore/{id}', [employeesController::class, 'restore']);
 
 
 
