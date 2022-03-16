@@ -25,10 +25,8 @@
         @foreach($res AS $r)
         <tr>
           <td>{{ $r->id }}</td>
-          @foreach($valid as $k=>$v)
-          <?php if (!is_array($v)) { ?>
-            <td>{{ $v }}</td>
-          <?php } else { dump($v); }?>
+          @foreach($r as $k=>$v)
+          <?php dump($v); ?>
           @endforeach
           <td><a href="{{ route($n.'.show',[(string)$m=>$r->id])}}">View</a></td>
         </tr>
