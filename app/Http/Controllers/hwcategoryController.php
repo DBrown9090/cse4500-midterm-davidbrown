@@ -15,7 +15,7 @@ class hwcategoryController extends Controller
 
       public function test()
     {
-      $cat = hwcategory::all();
+      $cat = hwcategory::all()->sortBy('id');
       return $cat->toJson();
     }
     /**
@@ -25,7 +25,7 @@ class hwcategoryController extends Controller
      */
     public function index()
     {
-        $cats = hwcategory::all();
+        $cats = hwcategory::all()->sortBy('id');
         return view('hwcategories',compact('cats'));
     }
 
