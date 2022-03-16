@@ -19,6 +19,7 @@ class employeeController extends Controller
      */
 
      public static $controllerName = 'employees';
+     public static $tableName = 'employee';
      public static $validationArray = [
         'Name' => 'required',
         'phone' => ['required','digits:10'],
@@ -34,7 +35,10 @@ class employeeController extends Controller
     public function index()
     {
       $res = employee::all()->sortBy('id');
-      return view(self::$controllerName,compact('res'));
+      $valid = self::$validationArray;
+      $n = self::$controllerName;
+      $m = self::$tableName;
+      return view(self::$controllerName,compact('res', 'valid','n','m'));
     }
 
     /**
