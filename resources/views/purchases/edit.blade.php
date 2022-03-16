@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Edit {{$o;}}')
+@section('title', 'Edit '.$o)
 
 @section('content_header')
     <h1>Edit {{$o}}</h1>
@@ -22,7 +22,13 @@
     @method('patch')
     @csrf
     @foreach($valid as $k=>$v)
-    <x-adminlte-input<?php if (in_array('date',$v)) {echo '-date';}?> name="{{ $k; }}" label="{{ $o; }} {{ $k; }}" value="{{ $res->{$k} }}" />
+    <?php if (in_array('date',$v)) { ?>
+      <x-adminlte-input name="{{ $k; }}" label="{{ $k; }}" type="date" />
+    <?php } else if (in_array('integer', $v)) { ?>
+      <x-adminlte-input name="{{ $k; }}" label="{{ $k; }}" type="number" />
+    <?php } else { ?>
+      <x-adminlte-input name="{{ $k; }}" label="{{ $k; }}" />
+    <?php } ?>
     @endforeach
     <x-adminlte-button type="Submit" label="Submit" />
 </form>
