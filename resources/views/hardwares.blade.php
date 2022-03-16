@@ -25,9 +25,7 @@
         @foreach($res AS $r)
         <tr>
           <td>{{ $r->id }}</td>
-          @foreach($r as $k=>$v)
-          <?php dump($v); ?>
-          @endforeach
+          <?php dump($r); ?>
           <td><a href="{{ route($n.'.show',[(string)$m=>$r->id])}}">View</a></td>
         </tr>
         @endforeach
