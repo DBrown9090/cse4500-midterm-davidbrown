@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', '{{ $o; }} Creation')
+@section('title', $o.' Creation')
 
 @section('content_header')
-    <h1>{{ $o;}} Creation</h1>
+    <h1>{{ $o; }} Creation</h1>
 @stop
 
 @if ($errors->any())
@@ -25,7 +25,3 @@
     <x-adminlte-button type="Submit" label="Submit" />
 </form>
 @stop
-
-<?php /*   <x-adminlte-input name="Name" label="User Name" />
-    <x-adminlte-input name="email" label="User Email" />
-    <x-adminlte-input name="phone" label="User Phone" />*/ ?>

@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Show {{ $o; }}')
+@section('title', 'Show '.$o)
 
 @section('content_header')
     <h1>Show {{ $o; }}</h1>
