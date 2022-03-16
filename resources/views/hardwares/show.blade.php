@@ -9,8 +9,6 @@
 @section('content')
   <h2>Id: {{ $res->id; }}</h2>
   <?php dump($res); ?>
-  <?php dump($cat); ?>
-  <?php dump($man); ?>
   @foreach($valid as $k=>$v)
   <h2>{{ $k; }}:<pre>{{ $res->{$k}; }}</pre></h2>
   @endforeach

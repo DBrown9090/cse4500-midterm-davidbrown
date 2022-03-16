@@ -87,13 +87,13 @@ class hardwareController extends Controller
     public function show($id)
     {
       $res= hardware::findOrFail($id);
-      $cat = $res->cat;
-      $man = $res->man;
+      $res->cat = DB::table('hwcategories')->where('id', $res->hwcategory_id);
+      $res->man = DB::table('manufacturers')->where('id', $res->manufacturer_id);
       $valid = self::$validationArray;
       $n = self::$controllerName;
       $m = self::$tableName;
       $o = self::$controlName;
-      return view(self::$controllerName.'.show',compact('res', 'valid', 'n', 'm','o', 'cat', 'man'));
+      return view(self::$controllerName.'.show',compact('res', 'valid', 'n', 'm','o'));
     }
 
     /**
@@ -105,13 +105,11 @@ class hardwareController extends Controller
     public function edit($id)
     {
       $res = hardware::findOrFail($id);
-      $cat = $res->cat();
-      $man = $res->man();
       $valid = self::$validationArray;
       $n = self::$controllerName;
       $m = self::$tableName;
       $o = self::$controlName;
-      return view(self::$controllerName.'.edit',compact('res','valid','n','m','o', 'cat', 'man'));
+      return view(self::$controllerName.'.edit',compact('res','valid','n','m','o'));
     }
 
     /**
