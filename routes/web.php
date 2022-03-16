@@ -60,7 +60,7 @@ Route::get('/db-migrate', function() {
 });
 
 //For whatever event feeds we may need, use this format
-Route::get('/events-feed', [hardwareController::class, 'getJSON']);
+Route::get('/events-feed', [hardwareController::class, 'toJSON']);
 
 Route::fallback(function() {
     return view('unknown');
