@@ -16,12 +16,12 @@ class hardware extends Model
 
     public function cat()
     {
-      return $this->hasOne(hwcategory::class);
+      return $this->hasMany(hwcategory::class);
     }
 
     public function man()
     {
-      return $this->hasOne(manufacturer::class);
+      return $this->hasMany(manufacturer::class);
     }
 
 }
