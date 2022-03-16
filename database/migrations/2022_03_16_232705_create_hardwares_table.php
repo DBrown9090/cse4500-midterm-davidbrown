@@ -23,9 +23,6 @@ class CreateHardwaresTable extends Migration
             $table->string('Storage');
             $table->softDeletes();
             $table->timestamps();
-        });
-
-        Schema::table('hardwares', function (Blueprint $table) {
             $table->foreign('ManufacturerID')->references('id')->on('manufacturers');
             $table->foreign('CategoryID')->references('id')->on('hwcategories');
         });
