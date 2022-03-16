@@ -8,7 +8,6 @@
 
 @section('content')
   <h2>Id: {{ $res->id; }}</h2>
-  <?php dump($res); ?>
   @foreach($valid as $k=>$v)
   <?php if (in_array($k, ['manufacturer_id', 'hwcategory_id'])) {
     if ($k == 'manufacturer_id') { ?>
