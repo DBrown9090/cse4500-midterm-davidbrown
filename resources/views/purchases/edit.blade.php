@@ -23,14 +23,14 @@
     @csrf
     @foreach($valid as $k=>$v)
     <?php if (in_array('date',$v)) { ?>
-      <x-adminlte-input name="{{ $k; }}" label="{{ $k; }}" type="date" value="{{ $res->{k}; }}"/>
+      <x-adminlte-input name="{{ $k; }}" label="{{ $k; }}" type="date" value="{{ $res->{$k}; }}"/>
     <?php } else if (in_array('numeric', $v)) {
       $step = "0";
       if ($k == 'Price') { $step = "0.01";}
     ?>
-      <x-adminlte-input name="{{ $k; }}" label="{{ $k; }}" type="number" value="{{ $res->{k}; }}" step="{{ $step }}" />
+      <x-adminlte-input name="{{ $k; }}" label="{{ $k; }}" type="number" value="{{ $res->{$k}; }}" step="{{ $step }}" />
     <?php } else { ?>
-      <x-adminlte-input name="{{ $k; }}" label="{{ $k; }}" value="{{ $res->{k}; }}"/>
+      <x-adminlte-input name="{{ $k; }}" label="{{ $k; }}" value="{{ $res->{$k}; }}"/>
     <?php } ?>
     @endforeach
     <x-adminlte-button type="Submit" label="Submit" />

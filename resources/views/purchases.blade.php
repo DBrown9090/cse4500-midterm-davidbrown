@@ -26,7 +26,7 @@
         <tr>
           <td>{{ $r->id }}</td>
           @foreach($valid as $k=>$v)
-          <td><?php if ($k == 'Price') { echo '$', $r->{k}/100; } else { echo $r->{k}; }?></td>
+          <td><?php if ($k == 'Price') { echo '$', $r->{$k}/100; } else { echo $r->{$k}; }?></td>
           @endforeach
           <td><a href="{{ route($n.'.show',[(string)$m=>$r->id])}}">View</a></td>
         </tr>
