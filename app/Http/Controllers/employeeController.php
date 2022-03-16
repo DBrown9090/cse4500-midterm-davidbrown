@@ -61,12 +61,12 @@ class employeeController extends Controller
     public function store(Request $request)
     {
       $validated = $request->validate(self::$validationArray);
-      $cou = array();
+      $req = array();
       foreach (self::$createOrUpdateArray as $k=>$v)
       {
-        $cou[$k] = {$v};
+        $req[$k] = $request->{$v};
       }
-      $res = employee::create($cou);
+      $res = employee::create($req);
       return $this->index()->with('message', 'User Created!');
     }
 
@@ -104,12 +104,12 @@ class employeeController extends Controller
     public function update(Request $request, $id)
     {
       $validated = $request->validate(self::$validationArray);
-      $$cou = array();
+      $req = array();
       foreach (self::$createOrUpdateArray as $k=>$v)
       {
-        $cou[$k] = {$v};
+        $req[$k] = $request->{$v};
       }
-      $res = employee::where('id',$id)->update($cou);
+      $res = employee::where('id',$id)->update($req);
       return $this->show($id);
     }
 
