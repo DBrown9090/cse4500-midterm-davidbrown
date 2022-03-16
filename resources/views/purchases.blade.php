@@ -38,17 +38,3 @@
 </div>
 <a href="{{ route($n.'.create') }} " class="btn btn-primary" >Create New {{ $o; }}</a>
 @stop
-
-@section('js')
-<script>
-    /*$(document).ready(function() {
-        $('#table').DataTable();
-    } );
-
-    <th>Name</th><th>email</th><th>phone</th>
-    <td>{{ $r->Name }}</td>
-    <td>{{ $r->email}}</td>
-    <td>{{ $r->phone}}</td>
-    */
-</script>
-@stop

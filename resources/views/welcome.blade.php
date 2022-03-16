@@ -20,7 +20,7 @@
       *Hardwares Table:
       Hardware ID - Hardware Name - Manufacturer ID - Hardware Category ID - Hardware CPU - Hardware RAM - Hardware Storage
 
-      *Employees Table:
+      **Employees Table:
       User ID - Name - User Email - User Phone#
 
       *Purchases Table:
