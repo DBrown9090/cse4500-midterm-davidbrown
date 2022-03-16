@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Users')
+@section('title', '{{ $o }}s')
 
 @section('content_header')
     <h1>{{ $o; }} List</h1>

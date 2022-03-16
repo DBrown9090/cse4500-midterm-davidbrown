@@ -244,6 +244,16 @@ return [
             'url'  => 'manufacturers',
             'icon' => 'fas fa-fw fa-columns',
         ],
+        [
+            'text' => 'Purchases',
+            'url'  => 'purchases',
+            'icon' => 'fas fa-fw fa-file',
+        ],
+        [
+            'text' => 'Hardware',
+            'url'  => 'hardwares',
+            'icon' => 'fas fa-fw fa-calendar-alt',
+        ],
     ],
 
     /*
