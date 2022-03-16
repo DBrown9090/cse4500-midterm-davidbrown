@@ -112,6 +112,8 @@ class employeeController extends Controller
       echo '</pre><pre>';
       var_dump($res);
       echo '</pre>';
+      exit;
+      die;
       //return $this->show($id)->with('message', 'User Edited!');
     }
 
