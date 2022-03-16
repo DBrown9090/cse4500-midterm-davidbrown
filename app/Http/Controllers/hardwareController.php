@@ -21,7 +21,7 @@ class hardwareController extends Controller
      public static $controllerName = 'hardwares';
      public static $tableName = 'hardware';
      public static $validationArray = [
-        'Name' => ['required','unique:hardwares'],
+        'Name' => ['required','unique:hardware'],
         'ManufacturerID' => ['required'],
         'CategoryID' => ['required'],
         'CPU' => ['required'],
