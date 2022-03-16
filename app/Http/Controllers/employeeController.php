@@ -64,9 +64,8 @@ class employeeController extends Controller
       $cou = array();
       foreach (self::$createOrUpdateArray as $k=>$v)
       {
-        $cou[$k] = $$v;
+        $cou[$k] = $v;
       }
-      var_dump($cou);
       $res = employee::create($cou);
       return $this->index()->with('message', 'User Created!');
     }
@@ -108,9 +107,8 @@ class employeeController extends Controller
       $cou = array();
       foreach (self::$createOrUpdateArray as $k=>$v)
       {
-        $cou[$k] = $$v;
+        $cou[$k] = $v;
       }
-      var_dump($cou);
       $res = employee::where('id',$id)->update($cou);
       return $this->show($id);
     }
