@@ -12,6 +12,7 @@ class hardware extends Model
     use SoftDeletes;
 
     protected $fillable = ['Name','ManufacturerID','CategoryID','CPU','RAM','Storage'];
+    protected $table = 'hardwares';
 
     public function cat()
     {

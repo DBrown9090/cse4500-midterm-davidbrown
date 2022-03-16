@@ -38,10 +38,7 @@ class hardwareController extends Controller
 
     public function index()
     {
-      if (hardware::all()->exists())
-      {
-        $res = hardware::all()->sortBy('id');
-      }
+      $res = hardware::all()->sortBy('id');
       $valid = self::$validationArray;
       $n = self::$controllerName;
       $m = self::$tableName;
