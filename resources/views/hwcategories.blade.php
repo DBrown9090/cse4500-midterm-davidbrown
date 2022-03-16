@@ -13,7 +13,7 @@
     <table id="table" class="table table-bordered">
       <thead>
         <tr>
-          <th style="width: 10px">#</th><th>Name</th><th>View</th><th>Delete</th>
+          <th style="width: 10px">#</th><th>Name</th><th>View</th>
         </tr>
       </thead>
       <tbody>
@@ -23,7 +23,6 @@
           <td>{{ $cat->id }}</td>
           <td>{{ $cat->Name }}</td>
           <td><a href="{{ route('hwcategories.show',['hwcategory'=>$cat->id])}}">View</a></td>
-          <td><a href="{{ route('hwcategories.delete', ['hwcategory'=>$cat->id])}}">Delete</a></td>
         </tr>
         @endforeach
 
