@@ -103,6 +103,8 @@ class hardwareController extends Controller
     public function edit($id)
     {
       $res = hardware::findOrFail($id);
+      $cat = $res->cat();
+      $man = $res->man();
       $valid = self::$validationArray;
       $n = self::$controllerName;
       $m = self::$tableName;
