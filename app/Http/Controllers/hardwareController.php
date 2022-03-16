@@ -40,6 +40,8 @@ class hardwareController extends Controller
     public function index()
     {
       $res = hardware::all()->sortBy('id');
+      $res->cat = DB::table('hwcategories');
+      $res->man = DB::table('manufacturers');
       $valid = self::$validationArray;
       $n = self::$controllerName;
       $m = self::$tableName;
@@ -106,6 +108,8 @@ class hardwareController extends Controller
     public function edit($id)
     {
       $res = hardware::findOrFail($id);
+      $res->cat = DB::table('hwcategories');
+      $res->man = DB::table('manufacturers');
       $valid = self::$validationArray;
       $n = self::$controllerName;
       $m = self::$tableName;

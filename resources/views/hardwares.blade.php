@@ -21,12 +21,16 @@
         </tr>
       </thead>
       <tbody>
-
+        <?php dump($res); ?>
         @foreach($res AS $r)
         <tr>
           <td>{{ $r->id }}</td>
           @foreach($valid as $k=>$v)
-          <td>{{ $r->{$k} }}</td>
+          <?php if ($k == 'manufacturer_id') { ?>
+          <?php } else if ($k == 'hwcategory_id') { ?>
+          <?php } else { ?>
+            <td>{{ $r->{$k} }}</td>
+          <?php } ?>
           @endforeach
           <td><a href="{{ route($n.'.show',[(string)$m=>$r->id])}}">View</a></td>
         </tr>
