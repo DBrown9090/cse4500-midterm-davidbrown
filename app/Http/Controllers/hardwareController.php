@@ -38,7 +38,11 @@ class hardwareController extends Controller
 
     public function index()
     {
-      $res = hardware::all()->sortBy('id');
+      $res = array();
+      if (Schema::hasTable('hardware')) {
+        $res = hardware::all()->sortBy('id');
+      }
+
       $valid = self::$validationArray;
       $n = self::$controllerName;
       $m = self::$tableName;
