@@ -27,9 +27,9 @@
           <td>{{ $r->id }}</td>
           @foreach($valid as $k=>$v)
           <?php if ($k == 'manufacturer_id') { ?>
-            <td>Manufacturer</td>
+            <td>{{ $res->man[$r->manufacturer_id -1]->Name; }}</td>
           <?php } else if ($k == 'hwcategory_id') { ?>
-            <td>Category</td>
+            <td>{{ $res->cat[$r->hwcategory_id -1]->Name; }}</td>
           <?php } else { ?>
             <td>{{ $r->{$k} }}</td>
           <?php } ?>
