@@ -10,7 +10,6 @@ class hardware extends Model
 {
     use HasFactory;
     use SoftDeletes;
-
     protected $fillable = ['Name','ManufacturerID','CategoryID','CPU','RAM','Storage'];
 
     public function cat()
