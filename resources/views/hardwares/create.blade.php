@@ -34,7 +34,7 @@
       $cata = array();
       foreach($res->cat as $r)
       {
-        //$cata[$r->id] = $r->Name;
+        $cata[$r->id] = $r->Name;
       }
       ?>
       <x-adminlte-select name="hwcategory_id">
