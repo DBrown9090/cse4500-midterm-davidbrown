@@ -19,13 +19,13 @@
 @section('content')
 <form method="post" action="{{ route($n.'.store') }}" >
     @csrf
-    <?php dump($res); exit; ?>
     @foreach($valid as $k=>$v)
     <?php if ($k == 'manufacturer_id') {
       $mana = array();
       foreach($res->man as $r)
       {
-        $mana[$r->id] = $r->name;
+        dump($r);
+        //$mana[$r->id] = $r->name;
       }
       ?>
       <x-adminlte-select name="manufacturer_id">
@@ -35,7 +35,8 @@
       $cata = array();
       foreach($res->cat as $r)
       {
-        $cata[$r->id] = $r->name;
+        dump($r);
+        //$cata[$r->id] = $r->name;
       }
       ?>
       <x-adminlte-select name="hwcategory_id">
