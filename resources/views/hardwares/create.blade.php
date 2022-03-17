@@ -19,6 +19,7 @@
 @section('content')
 <form method="post" action="{{ route($n.'.store') }}" >
     @csrf
+    <?php dump($res); exit; ?>
     @foreach($valid as $k=>$v)
     <?php if ($k == 'manufacturer_id') {
       $mana = array();
