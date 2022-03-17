@@ -25,7 +25,7 @@
       foreach($res->man as $r)
       {
         dump($r);
-        //$mana[$r->id] = $r->name;
+        $mana[$r->id] = $r->name;
       }
       ?>
       <x-adminlte-select name="manufacturer_id">
