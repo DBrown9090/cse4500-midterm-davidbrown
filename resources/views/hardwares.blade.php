@@ -15,7 +15,13 @@
         <tr>
           <th style="width: 10px">#</th>
           @foreach($valid as $k=>$v)
-          <th>{{ $k }}</th>
+          <?php if ($k == 'manufacturer_id') { ?>
+            <th>Manufacturer</th>
+          <?php } else if ($k == 'hwcategory_id') { ?>
+            <th>Category</th>
+          <?php } else { ?>
+            <th>{{ $k }}</th>
+          <?php } ?>
           @endforeach
           <th>View</th>
         </tr>
@@ -27,9 +33,9 @@
           <td>{{ $r->id }}</td>
           @foreach($valid as $k=>$v)
           <?php if ($k == 'manufacturer_id') { ?>
-            <td>{{ $res->man[$r->manufacturer_id -1]->Name; }}</td>
+            <td><a href="{{ route('manufacturers.show', ['manufacturer'=>$r->{$k} ] ) }}">{{ $res->man[$r->manufacturer_id -1]->Name; }}</a></td>
           <?php } else if ($k == 'hwcategory_id') { ?>
-            <td>{{ $res->cat[$r->hwcategory_id -1]->Name; }}</td>
+            <td><a href="{{ route('hwcategories.show', ['hwcategory'=>$r->{$k} ] ) }}">{{ $res->cat[$r->hwcategory_id -1]->Name; }}</a></td>
           <?php } else { ?>
             <td>{{ $r->{$k} }}</td>
           <?php } ?>
