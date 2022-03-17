@@ -57,10 +57,13 @@ class hardwareController extends Controller
     public function create()
     {
       $valid = self::$validationArray;
+      $res = new stdClass();
+      $res->cat = DB::table('hwcategories')->get();
+      $res->man = DB::table('manufacturers')->get();
       $n = self::$controllerName;
       $m = self::$tableName;
       $o = self::$controlName;
-      return view(self::$controllerName.'.create', compact('valid','n','m','o'));
+      return view(self::$controllerName.'.create', compact('res', 'valid','n','m','o'));
     }
 
     /**

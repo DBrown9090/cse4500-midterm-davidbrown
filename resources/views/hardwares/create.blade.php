@@ -20,7 +20,30 @@
 <form method="post" action="{{ route($n.'.store') }}" >
     @csrf
     @foreach($valid as $k=>$v)
-    <x-adminlte-input name="{{ $k; }}" label="{{ $o; }} {{ $k; }}" />
+    <?php if ($k == 'manufacturer_id') {
+      $mana = array();
+      foreach($res->man as $r)
+      {
+        $mana[$r->id] = $r->name;
+      }
+      ?>
+      <x-adminlte-select name="manufacturer_id">
+        <x-adminlte-options :options="$mana" placeholder="Manufacturer" />
+      </x-adminlte-select>
+    <?php } else if ($k == 'hwcategory_id') {
+      $cata = array();
+      foreach($res->cat as $r)
+      {
+        $cata[$r->id] = $r->name;
+      }
+      ?>
+      <x-adminlte-select name="hwcategory_id">
+        <x-adminlte-options :options="$cata" placeholder="Category" />
+      </x-adminlte-select>
+    <?php } else { ?>
+      <x-adminlte-input name="{{ $k; }}" label="{{ $o; }} {{ $k; }}" />
+    <?php } ?>
+
     @endforeach
     <x-adminlte-button type="Submit" label="Submit" />
 </form>
