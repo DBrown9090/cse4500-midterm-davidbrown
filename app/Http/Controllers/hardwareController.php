@@ -57,7 +57,7 @@ class hardwareController extends Controller
     public function create()
     {
       $valid = self::$validationArray;
-      $res = new stdClass();
+      $res = (object) array();
       $res->cat = DB::table('hwcategories')->get();
       $res->man = DB::table('manufacturers')->get();
       $n = self::$controllerName;
