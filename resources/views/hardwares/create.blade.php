@@ -24,7 +24,6 @@
       $mana = array();
       foreach($res->man as $r)
       {
-        dump($r);
         $mana[$r->id] = $r->Name;
       }
       ?>
@@ -35,8 +34,7 @@
       $cata = array();
       foreach($res->cat as $r)
       {
-        dump($r);
-        //$cata[$r->id] = $r->name;
+        //$cata[$r->id] = $r->Name;
       }
       ?>
       <x-adminlte-select name="hwcategory_id">
