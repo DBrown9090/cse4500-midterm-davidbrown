@@ -18,6 +18,6 @@ class purchase extends Model
     }
 
     public function setPriceAttribute($value) {
-        $this->attributes['Price'] = preg_replace("/[^0-9]/","",$value)*100;
+        $this->attributes['Price'] = preg_replace("/[^0-9]/","",$value*100);
     }
 }
