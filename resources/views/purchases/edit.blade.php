@@ -22,7 +22,7 @@
     @method('patch')
     @csrf
     @foreach($valid as $k=>$v)
-      @if ($k == 'Invoice')
+      @if ($k == 'PurchaseDate')
         <x-adminlte-input name="{{ $k; }}" label="{{ $k; }}" type="date" value="{{ $res->{$k}; }}"/>
       @else
         <x-adminlte-input name="{{ $k; }}" label="{{ $k; }}" value="{{ $res->{$k}; }}"/>

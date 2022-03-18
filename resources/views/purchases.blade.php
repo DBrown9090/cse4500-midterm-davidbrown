@@ -25,7 +25,13 @@
         <tr>
           <td>{{ $r->id }}</td>
           @foreach($valid as $k=>$v)
-            <td>{{ $r->{$k}; }}</td>
+            <td>
+              @if($k == 'Price')
+                {{$r->getFormattedPriceAttribute($r->{$k});}}
+              @else
+                {{ $r->{$k}; }}
+              @endif
+            </td>
           @endforeach
           <td><a href="{{ route($n.'.show',[(string)$m=>$r->id])}}">View</a></td>
         </tr>
