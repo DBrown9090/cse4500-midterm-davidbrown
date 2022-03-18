@@ -9,7 +9,7 @@
 @section('content')
   <h2>Id: {{ $res->id; }}</h2>
   @foreach($valid as $k=>$v)
-  <h2>{{ $k; }}:<?php if ($k == 'Price') { echo '$', $res->{$k}/100; } else { echo $res->{$k}; }?></h2>
+  <h2>{{ $k; }}:{{ echo $res->{$k}; }}</h2>
   @endforeach
   <h3><div><a href="{{route($n.'.edit', [(string)$m=>$res->id]) }}" class="btn btn-primary" >Edit</a></div></h3>
   <h3><div>
