@@ -21,12 +21,11 @@
         </tr>
       </thead>
       <tbody>
-        <?php dump($res); ?>
         @foreach($res AS $r)
         <tr>
           <td>{{ $r->id }}</td>
           @foreach($valid as $k=>$v)
-          <td><?php if ($k == 'Price') { echo '$', $r->{$k}/100; } else { echo $r->{$k}; }?></td>
+            <td>{{ $r->{$k}; }}</td>
           @endforeach
           <td><a href="{{ route($n.'.show',[(string)$m=>$r->id])}}">View</a></td>
         </tr>

@@ -12,4 +12,12 @@ class purchase extends Model
     use SoftDeletes;
 
     protected $fillable = ['Invoice', 'Price', 'PurchaseDate'];
+    public function getPriceAttribute($value)
+    {
+          return "$".$value/100;
+    }
+
+    public function setPriceAttribute($value){
+        $this->attributes['Price'] = preg_replace("/[^0-9]/","",$value)*100;
+    }
 }

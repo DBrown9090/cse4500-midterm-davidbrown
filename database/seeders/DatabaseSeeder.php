@@ -6,6 +6,7 @@ use Illuminate\Database\Seeder;
 use App\Models\hwcategory;
 use App\Models\employee;
 use App\Models\manufacturer;
+use App\Models\purchase;
 
 class DatabaseSeeder extends Seeder
 {
@@ -35,7 +36,8 @@ class DatabaseSeeder extends Seeder
         ];
 
         $purchasedata = [
-          ['Invoice'=>"1122345", 'Price'=>"12500", 'PurchaseDate'=>"1"],
+          ['Invoice'=>"1122345", 'Price'=>"1250000", 'PurchaseDate'=>"2022-03-15"],
+          ['Invoice'=>"1234123", 'Price'=>"9750000", 'PurchaseDate'=>"2021-01-03"],
         ];
 
         // \App\Models\User::factory(10)->create();
@@ -52,6 +54,11 @@ class DatabaseSeeder extends Seeder
         foreach($mandata as $m)
         {
           manufacturer::create($m);
+        }
+
+        foreach($purchasedata as $p)
+        {
+          purchase::create($p);
         }
 
     }
