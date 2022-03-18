@@ -30,8 +30,8 @@ class DatabaseSeeder extends Seeder
         ];
 
         $mandata = [
-          ['Name'=>'Dell','SalesInfo'=>"sales@dell.com\n1-800-buy-dell",'SupportInfo'=>"support@dell.com\n1-800-ded-dell"],
-          ['Name'=>'HP','SalesInfo'=>'hp@hp.com\n1-800-hp-sales','SupportInfo'=>'support@hp.com\n1-800-broke-hp'],
+          ['Name'=>'Dell','SalesInfo'=>"sales@dell.com\r\n1-800-buy-dell",'SupportInfo'=>"support@dell.com\r\n1-800-ded-dell"],
+          ['Name'=>'HP','SalesInfo'=>"hp@hp.com\r\n1-800-hp-sales",'SupportInfo'=>"support@hp.com\r\n1-800-broke-hp"],
         ];
 
         // \App\Models\User::factory(10)->create();
