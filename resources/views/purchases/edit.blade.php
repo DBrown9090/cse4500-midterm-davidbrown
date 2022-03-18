@@ -26,7 +26,7 @@
       <x-adminlte-input name="{{ $k; }}" label="{{ $k; }}" type="date" value="{{ $res->{$k}; }}"/>
     <?php } else if (in_array('numeric', $v)) {
       $step = "0";
-      if ($k == 'Price') { $step = "0.01";}
+      if ($k == 'Price') { $step = "0.01"; $res->{$k} = str_replace(array('$',','), '', $res->{$k});}
     ?>
       <x-adminlte-input name="{{ $k; }}" label="{{ $k; }}" type="number" value="{{ $res->{$k}; }}" step="{{ $step }}" />
     <?php } else { ?>
