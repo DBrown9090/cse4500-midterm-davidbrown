@@ -24,9 +24,9 @@ class DatabaseSeeder extends Seeder
         ];
 
         $empdata = [
-          ['Name'=>'David Brown', 'email'=>'davidbrown@thisemail.com', 'phone'=>'0123456789'],
-          ['Name'=>'Another Person', 'email'=>'another@theiremail.com', 'phone'=>'1234567890'],
-          ['Name'=>'This Guy', 'email'=>'thisguy@geewhizmail.com', 'phone'=>'0001231234'],
+          ['Name'=>'David Brown', 'Email'=>'davidbrown@thisemail.com', 'Phone'=>'0123456789'],
+          ['Name'=>'Another Person', 'Email'=>'another@theiremail.com', 'Phone'=>'1234567890'],
+          ['Name'=>'This Guy', 'Email'=>'thisguy@geewhizmail.com', 'Phone'=>'0001231234'],
         ];
 
         $mandata = [
