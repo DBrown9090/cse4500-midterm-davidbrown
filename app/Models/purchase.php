@@ -14,10 +14,12 @@ class purchase extends Model
     protected $fillable = ['Invoice', 'Price', 'PurchaseDate'];
     public function getPriceAttribute($value)
     {
-          return "$".number_format($value/100, 2);
+        return $value / 100;
+          //return "$".number_format($value/10000, 2);
     }
 
     public function setPriceAttribute($value) {
-        $this->attributes['Price'] = preg_replace("/[^0-9]/","",$value)*100;
+        return $value * 100;
+        //$this->attributes['Price'] = preg_replace("/[^0-9]/","",$value)*100;
     }
 }
