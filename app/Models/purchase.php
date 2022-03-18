@@ -20,9 +20,5 @@ class purchase extends Model
     public function setPriceAttribute($value) {
         $this->attributes['Price'] = preg_replace("/[^0-9]/","",(int)$value*100);
     }
-
-    public function getEditPriceAttribute($value)
-    {
-      return str_replace(array('$',','), '', $value);
-    }
+    
 }
