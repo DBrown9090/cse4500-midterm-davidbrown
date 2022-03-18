@@ -12,9 +12,9 @@
   @foreach($valid as $k=>$v)
   <h2>{{ $k; }}:
       @if($k == 'Price')
-        {{$r->getFormattedPriceAttribute($r->{$k});}}
+        {{$res->getFormattedPriceAttribute($res->{$k});}}
       @else
-        {{ $r->{$k}; }}
+        {{ $res->{$k}; }}
       @endif
   </h2>
   @endforeach

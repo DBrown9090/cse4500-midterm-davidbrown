@@ -27,7 +27,7 @@
           @foreach($valid as $k=>$v)
             <td>
               @if($k == 'Price')
-                {{$r->getFormattedPriceAttribute($r->{$k});}}
+                {{ $r->getFormattedPriceAttribute($r->{$k}); }}
               @else
                 {{ $r->{$k}; }}
               @endif
