@@ -22,8 +22,8 @@ class employeeController extends Controller
      public static $tableName = 'employee';
      public static $validationArray = [
         'Name' => 'required',
-        'phone' => ['required','digits:10'],
-        'email' => ['required','email','unique:employees'],
+        'Phone' => ['required','digits:10'],
+        'Email' => ['required','email','unique:employees'],
      ];
      public static $controlName = 'User';
 
@@ -72,7 +72,7 @@ class employeeController extends Controller
         $req[$k] = $request->{$k};
       }
       $res = employee::create($req);
-      return $this->index()->with('message', 'User Created!');
+      return $this->index();
     }
 
     /**
@@ -123,7 +123,7 @@ class employeeController extends Controller
         $req[$k] = $request->{$k};
       }
       $ret = employee::where('id',$id)->update($req);
-      return $this->show($id)->with('message', 'User Edited!');
+      return $this->show($id);
     }
 
     /**

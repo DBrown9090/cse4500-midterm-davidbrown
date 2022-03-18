@@ -12,14 +12,14 @@ class employee extends Model
     use HasFactory;
     use SoftDeletes;
 
-    protected $fillable = ['Name', 'email', 'phone'];
-    public function getphoneAttribute($value)
+    protected $fillable = ['Name', 'Email', 'Phone'];
+    public function getPhoneAttribute($value)
     {
-        $phone = preg_replace("/[^0-9]/","",$this->phone);
+        $phone = preg_replace("/[^0-9]/","",$this->Phone);
         return substr($phone ,2,3)."-".substr($phone ,6,3)."-".substr($phone ,10,4);
     }
 
-    public function setphoneAttribute($value){
-        $this->attributes['phone'] = preg_replace("/[^0-9]/","",$value);
+    public function setPhoneAttribute($value){
+        $this->attributes['Phone'] = preg_replace("/[^0-9]/","",$value);
     }
 }
