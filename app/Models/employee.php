@@ -11,11 +11,6 @@ class employee extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    use Database\Factories\EmployeeFactory;
 
     protected $fillable = ['Name', 'email', 'phone'];
-    protected static function newFactory()
-    {
-      return EmployeeFactory::new();
-    }
 }

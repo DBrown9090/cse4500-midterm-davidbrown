@@ -12,13 +12,13 @@ class EmployeeFactory extends Factory
      *
      * @return array
      */
-     protected $model = employee::class;
+    protected $model = employee::class;
     public function definition()
     {
         return [
-            'Name' => $this->faker->name(),
-            'email' => $this->faker->unique()->safeEmail(),
-            'phone' => $this->faker->unique()->phoneNumber(),
+            'Name'=> $this->faker->name(),
+            'email'=>$this->faker->unique()->safeEmail(),
+            'phone'=>$this->faker->unique()->phoneNumber(),
         ];
     }
 }
