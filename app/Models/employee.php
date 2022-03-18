@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Database\Factories\Administration\EmployeeFactory;
 
 
 class employee extends Model
@@ -13,4 +14,8 @@ class employee extends Model
     use SoftDeletes;
 
     protected $fillable = ['Name', 'email', 'phone'];
+    protected static function newFactory()
+    {
+      return EmployeeFactory::new();
+    }
 }
