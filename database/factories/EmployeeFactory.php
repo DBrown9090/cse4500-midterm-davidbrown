@@ -13,7 +13,7 @@ class EmployeeFactory extends Factory
      *
      * @return array
      */
-    protected $model = \App\Models\employee::class;
+    protected $model = employee::class;
     public function definition()
     {
         return [
