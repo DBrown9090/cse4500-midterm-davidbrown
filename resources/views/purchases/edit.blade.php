@@ -24,8 +24,6 @@
     @foreach($valid as $k=>$v)
       @if ($k == 'Invoice')
         <x-adminlte-input name="{{ $k; }}" label="{{ $k; }}" type="date" value="{{ $res->{$k}; }}"/>
-      <?php //@elseif ($k == 'Price')
-        //<x-adminlte-input name="{{ $k; }}" label="{{ $k; }}" value="{{ $res->{$k}; }}" step="0.01" /> ?>
       @else
         <x-adminlte-input name="{{ $k; }}" label="{{ $k; }}" value="{{ $res->{$k}; }}"/>
       @endif
