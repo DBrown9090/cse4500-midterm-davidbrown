@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\hwcategory;
+use App\Models\employee;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,5 +25,7 @@ class DatabaseSeeder extends Seeder
         foreach($hwcatdata as $hwc){
           hwcategory::create($hwc);
         }
+
+        employee::factory()->count(10)->create();
     }
 }

@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\employee;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class EmployeeFactory extends Factory
 {
@@ -12,7 +13,7 @@ class EmployeeFactory extends Factory
      *
      * @return array
      */
-    protected $model = employee::class;
+    protected $model = \App\Models\employee::class;
     public function definition()
     {
         return [
