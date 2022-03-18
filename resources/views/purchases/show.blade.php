@@ -7,6 +7,7 @@
 @stop
 
 @section('content')
+  <?php dump($res); ?>
   <h2>Id: {{ $res->id; }}</h2>
   @foreach($valid as $k=>$v)
   <h2>{{ $k; }}:{{ $res->{$k}; }}</h2>
