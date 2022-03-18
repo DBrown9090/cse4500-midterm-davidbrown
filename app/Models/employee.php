@@ -15,8 +15,9 @@ class employee extends Model
     protected $fillable = ['Name', 'Email', 'Phone'];
     public function getPhoneAttribute($value)
     {
-        $phone = preg_replace("/[^0-9]/","",$value);
-        return substr($phone ,2,3)."-".substr($phone ,6,3)."-".substr($phone ,10,4);
+          $cleaned = preg_replace('/[^[:digit:]]/', '', $value);
+          preg_match('/(\d{3})(\d{3})(\d{4})/', $cleaned, $matches);
+          return "({$matches[1]}) {$matches[2]}-{$matches[3]}";
     }
 
     public function setPhoneAttribute($value){
