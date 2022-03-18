@@ -21,7 +21,7 @@
         </tr>
       </thead>
       <tbody>
-
+        <?php dump($res); ?>
         @foreach($res AS $r)
         <tr>
           <td>{{ $r->id }}</td>

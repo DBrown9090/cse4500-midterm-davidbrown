@@ -34,6 +34,10 @@ class DatabaseSeeder extends Seeder
           ['Name'=>'HP','SalesInfo'=>"hp@hp.com\r\n1-800-hp-sales",'SupportInfo'=>"support@hp.com\r\n1-800-broke-hp"],
         ];
 
+        $purchasedata = [
+          ['Invoice'=>"1122345", 'Price'=>"12500", 'PurchaseDate'=>"1"],
+        ];
+
         // \App\Models\User::factory(10)->create();
 
         foreach($hwcatdata as $hwc){

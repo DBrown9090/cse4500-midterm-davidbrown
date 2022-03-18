@@ -7,11 +7,12 @@
 @stop
 
 @section('content')
-  <?php dump($res); ?>
   <h2>Id: {{ $res->id; }}</h2>
+
   @foreach($valid as $k=>$v)
-  <h2>{{ $k; }}:{{ $res->{$k}; }}</h2>
+    <h2>{{ $k; }}:{{ $res->{$k}; }}</h2>
   @endforeach
+
   <h3><div><a href="{{route($n.'.edit', [(string)$m=>$res->id]) }}" class="btn btn-primary" >Edit</a></div></h3>
   <h3><div>
     <form class="delete" action="{{route($n.'.destroy', [(string)$m=>$res->id])}}" method="post">

@@ -14,14 +14,16 @@
       <thead>
         <tr>
           <th style="width: 10px">#</th>
+
           @foreach($valid as $k=>$v)
           <th>{{ $k }}</th>
           @endforeach
+          
           <th>View</th>
         </tr>
       </thead>
       <tbody>
-<?php dump($res); ?>
+
         @foreach($res AS $r)
         <tr>
           <td>{{ $r->id }}</td>
