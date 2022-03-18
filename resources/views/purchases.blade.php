@@ -20,7 +20,6 @@
           <th>View</th>
         </tr>
       </thead>
-      <?php dump($res); ?>
       <tbody>
         @foreach($res AS $r)
         <tr>
