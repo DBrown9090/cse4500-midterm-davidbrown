@@ -55,7 +55,7 @@ Route::get('/db-test', function() {
 });
 
 Route::get('/db-migrate', function() {
-   Artisan::call('migrate:fresh');
+   Artisan::call('migrate:fresh --seed');
     echo Artisan::output();
 });
 
