@@ -13,7 +13,7 @@ class employee extends Model
     use SoftDeletes;
 
     protected $fillable = ['Name', 'Email', 'Phone'];
-    public function getPhoneAttribute($value)
+    /*public function getPhoneAttribute($value)
     {
         $phone = preg_replace("/[^0-9]/","",$this->Phone);
         return substr($phone ,2,3)."-".substr($phone ,6,3)."-".substr($phone ,10,4);
@@ -21,5 +21,5 @@ class employee extends Model
 
     public function setPhoneAttribute($value){
         $this->attributes['Phone'] = preg_replace("/[^0-9]/","",$value);
-    }
+    }*/
 }
