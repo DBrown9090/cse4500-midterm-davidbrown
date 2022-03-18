@@ -21,5 +21,5 @@ class employee extends Model
 
     public function setNicePhoneAttribute($value){
         $this->attributes['Phone'] = preg_replace("/[^0-9]/","",$value);
-    }*/
+    }
 }
