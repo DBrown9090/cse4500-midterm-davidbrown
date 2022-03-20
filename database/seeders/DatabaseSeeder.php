@@ -46,20 +46,6 @@ class DatabaseSeeder extends Seeder
           ['Invoice'=>"1234123", 'Price'=>"97500.11", 'PurchaseDate'=>"2021-01-03"],
         ];
 
-        $speciesdata = [
-            ['Name'=>'cat'],
-            ['Name'=>'dog'],
-            ['Name'=>'rat'],
-            ['Name'=>'pig'],
-            ['Name'=>'bat'],
-        ];
-
-        $animaldata = [
-          ['Name'=>'Barry', 'species_id'=>2],
-          ['Name'=>'Larry', 'species_id'=>4],
-          ['Name'=>'Harry', 'species_id'=>1],
-        ];
-
         $hardwaredata = [
           ['Name'=>'Dell #1','manufacturer_id'=>1,'hwcategory_id'=>2,'CPU'=>'Intel I7-6600U','RAM'=>'16GB','Storage'=>'1TB SSD'],
           ['Name'=>'Dell #2','manufacturer_id'=>1,'hwcategory_id'=>1,'CPU'=>'Ryzen 7 5800','RAM'=>'16GB','Storage'=>'1TB SSD + 1TB HDD'],
@@ -103,19 +89,9 @@ class DatabaseSeeder extends Seeder
           purchase::create($p);
         }
 
-        foreach($speciesdata as $s)
-        {
-          species::create($s);
-        }
-
         foreach($hardwaredata as $h)
         {
           hardware::create($h);
-        }
-
-        foreach($animaldata as $a)
-        {
-          animal::create($a);
         }
 
         foreach($unitdata as $u)
