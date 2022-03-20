@@ -16,8 +16,8 @@ class CreateHardwareTable extends Migration
         Schema::create('hardware', function (Blueprint $table) {
             $table->id();
             $table->string('Name');
-            $table->integer('manufacturer_id');
-            $table->integer('hwcategory_id');
+            $table->foreignIdFor(App\Models\manufacturer::class)->constrained();
+            $table->foreignIdFor(App\Models\hwcategory::class)->constrained();
             $table->string('CPU');
             $table->string('RAM');
             $table->string('Storage');

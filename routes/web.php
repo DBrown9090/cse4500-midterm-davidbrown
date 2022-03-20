@@ -6,6 +6,7 @@ use App\Http\Controllers\employeeController;
 use App\Http\Controllers\purchaseController;
 use App\Http\Controllers\manufacturerController;
 use App\Http\Controllers\hardwareController;
+use App\Http\Controllers\animalController;
 
 /*
 |--------------------------------------------------------------------------

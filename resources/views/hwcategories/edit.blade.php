@@ -12,6 +12,6 @@
     @method('patch')
     @csrf
     <x-adminlte-input name="Name" label="Name" value="{{$cat->Name}}"/>
-    <x-adminlte-button type="Submit" label="Submit" />
+    <x-adminlte-button type="Submit" label="Submit" theme="primary" />
 </form>
 @stop

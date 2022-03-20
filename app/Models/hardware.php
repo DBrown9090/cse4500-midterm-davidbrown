@@ -11,4 +11,14 @@ class hardware extends Model
     use HasFactory;
     use SoftDeletes;
     protected $fillable = ['Name','manufacturer_id','hwcategory_id','CPU','RAM','Storage'];
+
+    public function manufacturer()
+    {
+      return $this->belongsTo(manufacturer::class);
+    }
+
+    public function hwcategory()
+    {
+      return $this->belongsTo(hwcategory::class);
+    }
 }

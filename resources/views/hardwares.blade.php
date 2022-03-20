@@ -8,20 +8,22 @@
 
 @section('content')
 <div class="card">
-  <p>This lists all of the {{ $o; }}s available</p>
+  <p>This lists all of the types of {{ $o; }} available</p>
   <div class="card-body">
     <table id="table" class="table table-bordered">
       <thead>
         <tr>
           <th style="width: 10px">#</th>
           @foreach($valid as $k=>$v)
+          <th>
           <?php if ($k == 'manufacturer_id') { ?>
-            <th>Manufacturer</th>
+            Manufacturer
           <?php } else if ($k == 'hwcategory_id') { ?>
-            <th>Category</th>
+            Category
           <?php } else { ?>
-            <th>{{ $k }}</th>
+            {{ $k }}
           <?php } ?>
+          </th>
           @endforeach
           <th>View</th>
         </tr>
@@ -31,13 +33,15 @@
         <tr>
           <td>{{ $r->id }}</td>
           @foreach($valid as $k=>$v)
+            <td>
           <?php if ($k == 'manufacturer_id') { ?>
-            <td><a href="{{ route('manufacturers.show', ['manufacturer'=>$r->{$k} ] ) }}">{{ $res->man[$r->manufacturer_id -1]->Name; }}</a></td>
+            <a href="{{ route('manufacturers.show', ['manufacturer'=>$r->{$k} ] ) }}">{{ $r->manufacturer->Name; }}</a>
           <?php } else if ($k == 'hwcategory_id') { ?>
-            <td><a href="{{ route('hwcategories.show', ['hwcategory'=>$r->{$k} ] ) }}">{{ $res->cat[$r->hwcategory_id -1]->Name; }}</a></td>
+            <a href="{{ route('hwcategories.show', ['hwcategory'=>$r->{$k} ] ) }}">{{ $r->hwcategory->Name; }}</a>
           <?php } else { ?>
-            <td>{{ $r->{$k} }}</td>
+            {{ $r->{$k} }}
           <?php } ?>
+            </td>
           @endforeach
           <td><a href="{{ route($n.'.show',[(string)$m=>$r->id])}}">View</a></td>
         </tr>

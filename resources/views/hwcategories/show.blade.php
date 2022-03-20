@@ -14,7 +14,7 @@
       @method('delete')
       @csrf
       <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="Delete Category">
+      <input type="submit" value="Delete Category" theme="primary">
     </form>
   </div></h3>
 @stop

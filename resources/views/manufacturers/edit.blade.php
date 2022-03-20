@@ -28,7 +28,7 @@
     <x-adminlte-input name="{{ $k; }}" label="{{ $o; }} {{ $k; }}" value="{{ $res->{$k} }}" />
     <?php } ?>
     @endforeach
-    <x-adminlte-button type="Submit" label="Submit" />
+    <x-adminlte-button type="Submit" label="Submit" theme="primary" />
 </form>
 @stop
 

@@ -13,4 +13,9 @@ class manufacturer extends Model
 
     protected $fillable = ['Name','SalesInfo','SupportInfo'];
 
+    public function hardware()
+    {
+      return $this->hasMany(hardware::class);
+    }
+
 }

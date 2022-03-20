@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\hardware;
+use App\Models\manufacturer;
+use App\Models\hwcategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -33,15 +35,14 @@ class hardwareController extends Controller
 
     public function toJSON()
     {
-      $res = hardware::all()->sortBy('id');
+      $res = hardware::with('manufacturer', 'hwcategory')->get()->sortBy('id');
       return $res->toJson();
     }
 
     public function index()
     {
-      $res = hardware::all()->sortBy('id');
-      $res->cat = DB::table('hwcategories')->get();
-      $res->man = DB::table('manufacturers')->get();
+      $res = hardware::with('manufacturer','hwcategory')->get()->sortBy('id');
+
       $valid = self::$validationArray;
       $n = self::$controllerName;
       $m = self::$tableName;
@@ -58,8 +59,10 @@ class hardwareController extends Controller
     {
       $valid = self::$validationArray;
       $res = (object) array();
-      $res->cat = DB::table('hwcategories')->get();
-      $res->man = DB::table('manufacturers')->get();
+      $res->cat = hwcategory::all();
+      $res->man = manufacturer::all();
+      //$res->cat = hardware::with('hwcategory')->get()->lists('id', 'Name');//DB::table('hwcategories')->get();
+      //$res->man = hardware::with('manufacturer','hwcategory')->get()->lists('id', 'Name');//DB::table('manufacturers')->get();
       $n = self::$controllerName;
       $m = self::$tableName;
       $o = self::$controlName;
@@ -92,9 +95,9 @@ class hardwareController extends Controller
      */
     public function show($id)
     {
-      $res= hardware::findOrFail($id);
-      $res->cat = DB::table('hwcategories')->find($res->hwcategory_id);
-      $res->man = DB::table('manufacturers')->find($res->manufacturer_id);
+      $res= hardware::with('manufacturer', 'hwcategory')->findOrFail($id);
+      //$res->cat = DB::table('hwcategories')->find($res->hwcategory_id);
+      //$res->man = DB::table('manufacturers')->find($res->manufacturer_id);
       $valid = self::$validationArray;
       $n = self::$controllerName;
       $m = self::$tableName;
@@ -110,9 +113,9 @@ class hardwareController extends Controller
      */
     public function edit($id)
     {
-      $res = hardware::findOrFail($id);
-      $res->cat = DB::table('hwcategories');
-      $res->man = DB::table('manufacturers');
+      $res = hardware::with('manufacturer', 'hwcategory')->findOrFail($id);
+      $res->cat = hwcategory::all();
+      $res->man = manufacturer::all();
       $valid = self::$validationArray;
       $n = self::$controllerName;
       $m = self::$tableName;

@@ -7,7 +7,6 @@
 @stop
 
 @section('content')
-  <?php dump($res); ?>
   <h2>Id: {{ $res->id; }}</h2>
   @foreach($valid as $k=>$v)
   <h2>{{ $k; }}:
@@ -24,7 +23,7 @@
       @method('delete')
       @csrf
       <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="Delete {{ $o; }}">
+      <input type="submit" value="Delete {{ $o; }}" theme="primary">
     </form>
   </div></h3>
 @stop

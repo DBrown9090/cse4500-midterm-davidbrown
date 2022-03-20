@@ -24,7 +24,7 @@
     @foreach($valid as $k=>$v)
     <x-adminlte-input name="{{ $k; }}" label="{{ $o; }} {{ $k; }}" value="{{ $res->{$k} }}" />
     @endforeach
-    <x-adminlte-button type="Submit" label="Submit" />
+    <x-adminlte-button type="Submit" label="Submit" theme="primary" />
 </form>
 @stop
 

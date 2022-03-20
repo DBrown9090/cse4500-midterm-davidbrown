@@ -13,5 +13,8 @@ class hwcategory extends Model
 
     protected $fillable = ['Name'];
 
-
+    public function hardware()
+    {
+      return $this->hasMany(hardware::class);
+    }
 }

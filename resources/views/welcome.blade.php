@@ -17,7 +17,7 @@
       **Manufacturers Table:
       Manufacturer ID - Manufacturer Name - Manufacturer (Sales) Contact Info - Manufacturer Tech (Support) Contact Info
 
-      *Hardwares Table:
+      **Hardwares Table:
       Hardware ID - Hardware Name - Manufacturer ID - Hardware Category ID - Hardware CPU - Hardware RAM - Hardware Storage
 
       **Employees Table:

@@ -11,9 +11,9 @@
   @foreach($valid as $k=>$v)
   <?php if (in_array($k, ['manufacturer_id', 'hwcategory_id'])) {
     if ($k == 'manufacturer_id') { ?>
-      <h2>Manufacturer:<pre><a href="{{ route('manufacturers.show', ['manufacturer'=>$res->{$k} ] ) }}">{{ $res->man->Name }}</a></pre></h2>
+      <h2>Manufacturer:<pre><a href="{{ route('manufacturers.show', ['manufacturer'=>$res->{$k} ] ) }}">{{ $res->manufacturer->Name }}</a></pre></h2>
     <?php } else { ?>
-      <h2>Category:<pre><a href="{{ route('hwcategories.show', ['hwcategory'=>$res->{$k} ] ) }}">{{ $res->cat->Name }}</a></pre></h2>
+      <h2>Category:<pre><a href="{{ route('hwcategories.show', ['hwcategory'=>$res->{$k} ] ) }}">{{ $res->hwcategory->Name }}</a></pre></h2>
     <?php }
     } else { ?>
     <h2>{{ $k; }}:<pre>{{ $res->{$k}; }}</pre></h2>
@@ -25,7 +25,7 @@
       @method('delete')
       @csrf
       <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="Delete {{ $o; }}">
+      <input type="submit" value="Delete {{ $o; }}" theme="primary">
     </form>
   </div></h3>
 @stop

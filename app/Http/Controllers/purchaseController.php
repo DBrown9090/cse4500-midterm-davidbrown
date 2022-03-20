@@ -18,6 +18,7 @@ class purchaseController extends Controller
      id - Name - email - phone
      */
 
+    protected $casts = ['Price'=>'integer'];
     public static $controllerName = 'purchases';
     public static $tableName = 'purchase';
     public static $validationArray = [
@@ -122,6 +123,7 @@ class purchaseController extends Controller
       {
         $req[$k] = $request->{$k};
       }
+      $req["Price"] = purchase::priceUpdate($req['Price']);
       $ret = purchase::where('id',$id)->update($req);
       return $this->show($id);
     }
