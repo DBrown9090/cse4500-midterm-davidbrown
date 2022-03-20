@@ -6,7 +6,8 @@ use App\Http\Controllers\employeeController;
 use App\Http\Controllers\purchaseController;
 use App\Http\Controllers\manufacturerController;
 use App\Http\Controllers\hardwareController;
-use App\Http\Controllers\animalController;
+use App\Http\Controllers\noteController;
+use App\Http\Controllers\unitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,10 @@ Route::get('/manufacturers/restore/{id}', [manufacturerController::class, 'resto
 Route::resource('/hardwares', hardwareController::class);
 
 Route::get('/hardwares/restore/{id}', [hardwareController::class, 'restore']);
+
+Route::resource('/notes', noteController::class);
+
+Route::resource('/units', unitController::class);
 
 // Database Functions will be below Here
 

@@ -15,10 +15,10 @@ class CreateUnitsTable extends Migration
     {
         Schema::create('units', function (Blueprint $table) {
             $table->id();
-            $table->integer('HardwareID');
-            $table->integer('ManufacturerID');
-            $table->integer('EmployeeID');
-            $table->integer('PurchaseID');
+            $table->string('Name');
+            $table->foreignIdFor(App\Models\hardware::class)->constrained();
+            $table->foreignIdFor(App\Models\employee::class)->constrained();
+            $table->foreignIdFor(App\Models\purchase::class)->constrained();
             $table->softDeletes();
             $table->timestamps();
         });

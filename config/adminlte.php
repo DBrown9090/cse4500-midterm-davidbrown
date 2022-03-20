@@ -254,6 +254,16 @@ return [
             'url'  => 'hardwares',
             'icon' => 'fas fa-fw fa-calendar-alt',
         ],
+        [
+            'text' => 'Notes',
+            'url'  => 'notes',
+            'icon' => 'fas fa-fw fa-calendar-alt',
+        ],
+        [
+            'text' => 'Units',
+            'url'  => 'units',
+            'icon' => 'fas fa-fw fa-calendar-alt',
+        ],
     ],
 
     /*
