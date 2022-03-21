@@ -15,7 +15,15 @@
         <tr>
           <th style="width: 10px">#</th>
           @foreach($valid as $k=>$v)
-          <th>{{ $k }}</th>
+          <th>
+            @if($k == 'SalesInfo')
+              Sales Information
+            @elseif($k == 'SupportInfo')
+              Support Information
+            @else
+              {{ $k }}
+            @endif
+          </th>
           @endforeach
           <th>View</th>
         </tr>
@@ -26,7 +34,7 @@
         <tr>
           <td>{{ $r->id }}</td>
           @foreach($valid as $k=>$v)
-          <td><pre>{{ $r->{$k} }}</pre></td>
+          <td style="white-space: pre-line;">{{ $r->{$k} }}</td>
           @endforeach
           <td><a href="{{ route($n.'.show',[(string)$m=>$r->id])}}">View</a></td>
         </tr>
