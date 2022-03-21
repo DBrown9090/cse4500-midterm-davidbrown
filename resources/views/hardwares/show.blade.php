@@ -9,25 +9,27 @@
 @section('content')
   <h2>Id: {{ $res->id; }}</h2>
   @foreach($valid as $k=>$v)
+  <h2>
   <?php if (in_array($k, ['manufacturer_id', 'hwcategory_id'])) {
     if ($k == 'manufacturer_id') { ?>
-      <h2>Manufacturer:<pre><a href="{{ route('manufacturers.show', ['manufacturer'=>$res->{$k} ] ) }}">{{ $res->manufacturer->Name }}</a></pre></h2>
+      Manufacturer: <a href="{{ route('manufacturers.show', ['manufacturer'=>$res->{$k} ] ) }}">{{ $res->manufacturer->Name }}</a>
     <?php } else { ?>
-      <h2>Category:<pre><a href="{{ route('hwcategories.show', ['hwcategory'=>$res->{$k} ] ) }}">{{ $res->hwcategory->Name }}</a></pre></h2>
+      Category: <a href="{{ route('hwcategories.show', ['hwcategory'=>$res->{$k} ] ) }}">{{ $res->hwcategory->Name }}</a>
     <?php }
     } else { ?>
-    <h2>{{ $k; }}:<pre>{{ $res->{$k}; }}</pre></h2>
+      {{ $k; }}: {{ $res->{$k}; }}
   <?php } ?>
+  </h2>
   @endforeach
-  <h3><div><a href="{{route($n.'.edit', [(string)$m=>$res->id]) }}" class="btn btn-primary" >Edit</a></div></h3>
-  <h3><div>
-    <form class="delete" action="{{route($n.'.destroy', [(string)$m=>$res->id])}}" method="post">
+  <hr>
+  <h4><div><a href="{{route($n.'.edit', [(string)$m=>$res->id]) }}" class="btn btn-primary" >Edit</a>
+    <form style="display:inline" class="delete" action="{{route($n.'.destroy', [(string)$m=>$res->id])}}" method="post">
       @method('delete')
       @csrf
       <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="Delete {{ $o; }}" theme="primary">
+      <input type="submit" value="Delete {{ $o; }}" class="btn btn-danger">
     </form>
-  </div></h3>
+  </div></h4>
 @stop
 
 @section('js')
