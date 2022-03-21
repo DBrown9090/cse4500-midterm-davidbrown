@@ -42,7 +42,3 @@
     <x-adminlte-button type="Submit" label="Submit" theme="primary" />
 </form>
 @stop
-
-<?php /*     <x-adminlte-input name="Name" label="Name" value="{{$res->Name}}"/>
-    <x-adminlte-input name="email" label="email" value="{{$res->email}}"/>
-    <x-adminlte-input name="phone" label="phone" value="{{$res->phone}}"/> */ ?>

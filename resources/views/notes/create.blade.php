@@ -38,7 +38,3 @@
     <x-adminlte-button type="Submit" label="Submit" theme="primary" />
 </form>
 @stop
-
-<?php /*   <x-adminlte-input name="Name" label="User Name" />
-    <x-adminlte-input name="email" label="User Email" />
-    <x-adminlte-input name="phone" label="User Phone" />*/ ?>

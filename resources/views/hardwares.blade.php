@@ -53,12 +53,3 @@
 </div>
 <a href="{{ route($n.'.create') }} " class="btn btn-primary" >Create New {{ $o; }}</a>
 @stop
-
-@section('js')
-<script>
-    /*$(document).ready(function() {
-        $('#table').DataTable();
-    } );
-    */
-</script>
-@stop

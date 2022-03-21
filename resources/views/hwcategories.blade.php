@@ -32,11 +32,3 @@
 </div>
 <a href="{{ route('hwcategories.create') }} " class="btn btn-primary" >Create New Category</a>
 @stop
-
-@section('js')
-<script>
-    $(document).ready(function() {
-        $('#table').DataTable();
-    } );
-</script>
-@stop
