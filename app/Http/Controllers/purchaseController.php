@@ -22,8 +22,8 @@ class purchaseController extends Controller
     public static $controllerName = 'purchases';
     public static $tableName = 'purchase';
     public static $validationArray = [
-      'Invoice' => ['required','integer','numeric'],
-      'Price' => ['required', 'numeric'],
+      'Invoice' => ['required','integer','numeric', 'max:2147483647'],
+      'Price' => ['required', 'numeric', 'max:2147483647'],
       'PurchaseDate' => ['required', 'date'],
     ];
     public static $controlName = 'Purchase';
@@ -72,6 +72,7 @@ class purchaseController extends Controller
       {
         $req[$k] = $request->{$k};
       }
+      $req["Price"] = purchase::priceUpdate($req['Price']);
       $res = purchase::create($req);
       return $this->index();
     }

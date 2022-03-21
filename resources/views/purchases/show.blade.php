@@ -17,15 +17,15 @@
       @endif
   </h2>
   @endforeach
-  <h3><div><a href="{{route($n.'.edit', [(string)$m=>$res->id]) }}" class="btn btn-primary" >Edit</a></div></h3>
-  <h3><div>
-    <form class="delete" action="{{route($n.'.destroy', [(string)$m=>$res->id])}}" method="post">
+  <hr>
+  <h4><div><a href="{{route($n.'.edit', [(string)$m=>$res->id]) }}" class="btn btn-primary" >Edit</a>
+    <form style="display:inline;" class="delete" action="{{route($n.'.destroy', [(string)$m=>$res->id])}}" method="post">
       @method('delete')
       @csrf
       <input type="hidden" name="_method" value="DELETE">
-      <input type="submit" value="Delete {{ $o; }}" theme="primary">
+      <input type="submit" value="Delete {{ $o; }}" class="btn btn-danger">
     </form>
-  </div></h3>
+  </div></h4>
 @stop
 
 @section('js')
