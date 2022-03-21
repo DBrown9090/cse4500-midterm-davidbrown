@@ -8,6 +8,7 @@
 
 @section('content')
   <h3>{{ $cat->id; }} - {{ $cat->Name; }}</h3>
+  <hr>
   <h4><div><a href="{{route('hwcategories.edit', ['hwcategory'=>$cat->id]) }}" class="btn btn-primary" >Edit</a>
     <form style="display:inline"class="delete" action="{{route('hwcategories.destroy', ['hwcategory'=>$cat->id])}}" method="post">
       @method('delete')
