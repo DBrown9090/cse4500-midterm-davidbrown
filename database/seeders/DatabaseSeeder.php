@@ -64,7 +64,7 @@ class DatabaseSeeder extends Seeder
 
         $unitdata = [
           ['Name'=> 'First PC', 'hardware_id'=>1, 'employee_id'=>1, 'purchase_id'=>1],
-          ['Name'=> '', 'hardware_id'=>2, 'employee_id'=>2, 'purchase_id'=>1],
+          ['Name'=> '#1221', 'hardware_id'=>2, 'employee_id'=>2, 'purchase_id'=>1],
           ['Name'=> 'no special name', 'hardware_id'=>3, 'employee_id'=>3, 'purchase_id'=>2],
           ['Name'=> 'another piece of hardware', 'hardware_id'=>5, 'employee_id'=>1, 'purchase_id'=>2],
         ];

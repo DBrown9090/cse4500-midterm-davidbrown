@@ -24,17 +24,11 @@
 
         @foreach($res AS $r)
         <tr>
-          <td><pre>{{ $r->id }}</pre></td>
+          <td>{{ $r->id }}</td>
           @foreach($valid as $k=>$v)
-            <td>
-            @if($k == 'unit_id')
-              <a href="{{ route('units.show', ['unit'=>$r->{$k} ] ) }}">{{ $r->unit->Name }}</a>
-            @else
-              <pre>{{ $r->{$k} }}</pre>
-            @endif
-            </td>
+            <td style="white-space: pre-line;">@if($k == 'unit_id')<a href="{{ route('units.show', ['unit'=>$r->{$k} ] ) }}">{{ $r->unit->Name }}</a>@else{{ $r->{$k} }}@endif</td>
           @endforeach
-          <td><pre><a href="{{ route($n.'.show',[(string)$m=>$r->id])}}">View</a></pre></td>
+          <td><a href="{{ route($n.'.show',[(string)$m=>$r->id])}}">View</a></td>
         </tr>
         @endforeach
 
