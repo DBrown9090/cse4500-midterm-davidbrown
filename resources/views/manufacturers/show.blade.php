@@ -35,6 +35,17 @@
         </tr>
       </tbody>
     </table>
+    <p>Associated Hardware and Deployed Units:
+    @foreach($res->hardware as $q)
+    <p><a href="{{ route('hardwares.show', ['hardware'=>$q->id]) }}">{{ $q->Name}}</a>:
+    (<?php
+      $newst = '';
+    foreach($q->unit as $p) {
+        $newst .= '<a href="'.route('units.show', ['unit'=>$p->id]).'">'.$p->Name.'</a>, ';
+    }
+    echo substr($newst, 0, -2); ?>)</p>
+    @endforeach
+  </p>
   </div>
 </div>
 <h4><div><a href="{{route($n.'.edit', [(string)$m=>$res->id]) }}" class="btn btn-primary" >Edit</a>

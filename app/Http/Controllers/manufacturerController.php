@@ -83,7 +83,7 @@ class manufacturerController extends Controller
      */
     public function show($id)
     {
-      $res= manufacturer::findOrFail($id);
+      $res= manufacturer::with('hardware.unit')->findOrFail($id);
       $valid = self::$validationArray;
       $n = self::$controllerName;
       $m = self::$tableName;

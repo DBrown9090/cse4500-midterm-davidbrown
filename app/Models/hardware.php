@@ -21,4 +21,9 @@ class hardware extends Model
     {
       return $this->belongsTo(hwcategory::class);
     }
+
+    public function unit()
+    {
+      return $this->hasMany(unit::class);
+    }
 }
