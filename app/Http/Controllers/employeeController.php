@@ -25,7 +25,7 @@ class employeeController extends Controller
         'Phone' => ['required','digits:10'],
         'Email' => ['required','email','unique:employees'],
      ];
-     public static $controlName = 'User';
+     public static $controlName = 'Employee';
 
     public function test()
     {

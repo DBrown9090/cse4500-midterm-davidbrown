@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Users')
+@section('title', 'Employees')
 
 @section('content_header')
     <h1>{{ $o; }} List</h1>
@@ -18,7 +18,7 @@
           @foreach($valid as $k=>$v)
           <th>{{ $k }}</th>
           @endforeach
-          
+
           <th>View</th>
         </tr>
       </thead>
