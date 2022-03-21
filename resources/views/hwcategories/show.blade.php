@@ -14,7 +14,7 @@
   foreach($cat->hardware as $p) {
       $newst .= '<a href="'.route('hardwares.show', ['hardware'=>$p->id]).'">'.$p->Name.'</a>, ';
   }
-  echo substr($newst, 0, -2); ?>)</p>
+  echo substr($newst, 0, -2); ?>)</h3>
   <hr>
   <h4><div><a href="{{route('hwcategories.edit', ['hwcategory'=>$cat->id]) }}" class="btn btn-primary" >Edit</a>
     <form style="display:inline"class="delete" action="{{route('hwcategories.destroy', ['hwcategory'=>$cat->id])}}" method="post">

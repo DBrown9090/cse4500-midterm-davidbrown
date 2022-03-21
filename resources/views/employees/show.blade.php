@@ -12,6 +12,13 @@
   @foreach($valid as $k=>$v)
     <h2>{{ $k; }}:{{ $res->{$k}; }}</h2>
   @endforeach
+  <h2>Associated Units:
+    (<?php
+      $newst = '';
+    foreach($res->unit as $p) {
+        $newst .= '<a href="'.route('units.show', ['unit'=>$p->id]).'">'.$p->Name.'</a>, ';
+    }
+    echo substr($newst, 0, -2); ?>)</h2>
   <hr>
   <h4><div><a href="{{route($n.'.edit', [(string)$m=>$res->id]) }}" class="btn btn-primary" >Edit</a>
     <form style="display:inline" class="delete" action="{{route($n.'.destroy', [(string)$m=>$res->id])}}" method="post">

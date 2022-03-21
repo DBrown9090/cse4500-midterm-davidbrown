@@ -29,4 +29,9 @@ class employee extends Model
     {
         return preg_replace("/[^0-9]/","",$value);
     }
+
+    public function unit()
+    {
+      return $this->hasMany(unit::class);
+    }
 }
