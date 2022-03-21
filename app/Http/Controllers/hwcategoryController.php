@@ -66,7 +66,7 @@ class hwcategoryController extends Controller
      */
     public function show($id)
     {
-      $cat= hwcategory::findOrFail($id);
+      $cat= hwcategory::with('hardware')->findOrFail($id);
       return view('hwcategories.show',compact('cat'));
     }
 
