@@ -20,7 +20,13 @@ class employee extends Model
           return "({$matches[1]}) {$matches[2]}-{$matches[3]}";
     }
 
-    public function setPhoneAttribute($value){
+    public function setPhoneAttribute($value)
+    {
         $this->attributes['Phone'] = preg_replace("/[^0-9]/","",$value);
+    }
+
+    public function phoneUpdate($value)
+    {
+        return preg_replace("/[^0-9]/","",$value);
     }
 }

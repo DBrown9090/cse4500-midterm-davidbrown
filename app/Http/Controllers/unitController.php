@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\unit;
+use App\Models\hardware;
+use App\Models\employee;
+use App\Models\purchase;
 use Illuminate\Http\Request;
 
 class unitController extends Controller
@@ -21,7 +24,7 @@ class unitController extends Controller
      public static $controllerName = 'units';
      public static $tableName = 'unit';
      public static $validationArray = [
-        'Name' => ['required','unique:unit'],
+        'Name' => ['required'],
         'hardware_id' => ['required'],
         'employee_id' => ['required'],
         'purchase_id' => ['required'],
@@ -54,10 +57,9 @@ class unitController extends Controller
     {
       $valid = self::$validationArray;
       $res = (object) array();
-      //$res->cat = hwcategory::all();
-      //$res->man = manufacturer::all();
-      //$res->cat = unit::with('hwcategory')->get()->lists('id', 'Name');//DB::table('hwcategories')->get();
-      //$res->man = unit::with('manufacturer','hwcategory')->get()->lists('id', 'Name');//DB::table('manufacturers')->get();
+      $res->hardware = hardware::select('id', 'Name')->get()->sortBy('id');
+      $res->employee = employee::select('id', 'Name')->get()->sortBy('id');
+      $res->purchase = purchase::select('id', 'Invoice')->get()->sortBy('id');
       $n = self::$controllerName;
       $m = self::$tableName;
       $o = self::$controlName;
@@ -109,8 +111,9 @@ class unitController extends Controller
     public function edit($id)
     {
       $res = unit::with('hardware', 'employee', 'purchase')->findOrFail($id);
-      //$res->cat = hwcategory::all();
-      //$res->man = manufacturer::all();
+      $res->hardware = hardware::select('id', 'Name')->get()->sortBy('id');
+      $res->employee = employee::select('id', 'Name')->get()->sortBy('id');
+      $res->purchase = purchase::select('id', 'Invoice')->get()->sortBy('id');
       $valid = self::$validationArray;
       $n = self::$controllerName;
       $m = self::$tableName;

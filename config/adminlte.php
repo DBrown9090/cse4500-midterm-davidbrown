@@ -230,19 +230,39 @@ return [
             'text' => 'search',
         ],
         [
-            'text' => 'Hardware Categories',
-            'url'  => 'hwcategories',
-            'icon' => 'fas fa-fw fa-file',
-        ],
-        [
-            'text' => 'Users',
-            'url'  => 'employees',
+            'text' => 'Units',
+            'url'  => 'units',
             'icon' => 'fas fa-fw fa-calendar-alt',
         ],
         [
-            'text' => 'Manufacturers',
-            'url'  => 'manufacturers',
-            'icon' => 'fas fa-fw fa-columns',
+            'text' => 'Hardware',
+            'icon' => 'fas fa-fw fa-file',
+            'submenu' => [
+              [
+                  'text' => 'Hardware Types',
+                  'url'  => 'hardwares',
+                  'icon' => 'fas fa-fw fa-file',
+                  'classes' => 'ml-2',
+              ],
+              [
+                  'text' => 'Manufacturers',
+                  'url'  => 'manufacturers',
+                  'icon' => 'fas fa-fw fa-columns',
+                  'classes' => 'ml-2',
+
+              ],
+              [
+                  'text' => 'Hardware Categories',
+                  'url'  => 'hwcategories',
+                  'icon' => 'fas fa-fw fa-file',
+                  'classes' => 'ml-2',
+              ],
+            ],
+        ],
+        [
+            'text' => 'Employees',
+            'url'  => 'employees',
+            'icon' => 'fas fa-fw fa-calendar-alt',
         ],
         [
             'text' => 'Purchases',
@@ -250,20 +270,11 @@ return [
             'icon' => 'fas fa-fw fa-file',
         ],
         [
-            'text' => 'Hardware',
-            'url'  => 'hardwares',
-            'icon' => 'fas fa-fw fa-calendar-alt',
-        ],
-        [
             'text' => 'Notes',
             'url'  => 'notes',
             'icon' => 'fas fa-fw fa-calendar-alt',
         ],
-        [
-            'text' => 'Units',
-            'url'  => 'units',
-            'icon' => 'fas fa-fw fa-calendar-alt',
-        ],
+
     ],
 
     /*

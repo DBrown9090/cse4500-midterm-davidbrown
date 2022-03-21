@@ -65,12 +65,14 @@ class employeeController extends Controller
      */
     public function store(Request $request)
     {
+      $request['Phone'] = employee::phoneUpdate($request['Phone']);
       $validated = $request->validate(self::$validationArray);
       $req = array();
       foreach (self::$validationArray as $k=>$v)
       {
         $req[$k] = $request->{$k};
       }
+      $req['Phone'] = employee::phoneUpdate($req['Phone']);
       $res = employee::create($req);
       return $this->index();
     }
@@ -116,7 +118,10 @@ class employeeController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $validated = $request->validate(self::$validationArray);
+      $va = self::$validationArray;
+      $va['Email'] = ['required','email','unique:employees,Email,'.$id];
+      $request['Phone'] = employee::phoneUpdate($request['Phone']);
+      $validated = $request->validate($va);
       $req = array();
       foreach (self::$validationArray as $k=>$v)
       {

@@ -62,7 +62,7 @@ Route::get('/db-test', function() {
 
 Route::get('/db-migrate', function() {
    Artisan::call('migrate:fresh --seed');
-    echo Artisan::output();
+    echo '<pre>',Artisan::output(), '</pre>';
 });
 
 //For whatever event feeds we may need, use this format
