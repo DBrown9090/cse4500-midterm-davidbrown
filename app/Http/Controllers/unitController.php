@@ -6,6 +6,7 @@ use App\Models\unit;
 use App\Models\hardware;
 use App\Models\employee;
 use App\Models\purchase;
+use App\Models\note;
 use Illuminate\Http\Request;
 
 class unitController extends Controller
@@ -149,12 +150,14 @@ class unitController extends Controller
     public function destroy($id)
     {
       $deleted = unit::where('id', $id)->delete();
+      $deletednotes = note::where('unit_id', $id)->delete();
       return $this->index();
     }
 
     public function restore($id)
     {
         $restored = unit::where('id', $id)->restore();
+        $restorednotes = note::where('unit_id', $id)->restore();
         return $this->index();
     }
 }

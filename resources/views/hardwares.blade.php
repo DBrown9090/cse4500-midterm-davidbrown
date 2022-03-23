@@ -35,9 +35,9 @@
           @foreach($valid as $k=>$v)
             <td>
           <?php if ($k == 'manufacturer_id') { ?>
-            <a href="{{ route('manufacturers.show', ['manufacturer'=>$r->{$k} ] ) }}">{{ $r->manufacturer->Name; }}</a>
+            <a href="{{ route('manufacturers.show', ['manufacturer'=>$r->{$k} ?: 0 ] ) }}">{{ isset($r->manufacturer->Name) ? $r->manufacturer->Name : 'None'; }}</a>
           <?php } else if ($k == 'hwcategory_id') { ?>
-            <a href="{{ route('hwcategories.show', ['hwcategory'=>$r->{$k} ] ) }}">{{ $r->hwcategory->Name; }}</a>
+            <a href="{{ route('hwcategories.show', ['hwcategory'=>$r->{$k} ?: 0 ] ) }}">{{ isset($r->hwcategory->Name) ? $r->hwcategory->Name : 'None'; }}</a>
           <?php } else { ?>
             {{ $r->{$k} }}
           <?php } ?>

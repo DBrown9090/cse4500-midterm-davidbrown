@@ -140,6 +140,7 @@ class employeeController extends Controller
     public function destroy($id)
     {
       $deleted = employee::where('id', $id)->delete();
+      \DB::table('units')->where('employee_id', $id)->update(['employee_id' => 0]);
       return $this->index();
     }
 

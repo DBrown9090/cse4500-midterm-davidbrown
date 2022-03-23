@@ -37,12 +37,12 @@
           <td>{{ $r->id }}</td>
           @foreach($valid as $k=>$v)
             <td>
-              @if($k == 'hardware_id')
-                <a href="{{ route('hardwares.show', ['hardware'=>$r->{$k} ] ) }}">{{ $r->hardware->Name }}</a>
+              @if($k == 'hardware_id' && $r->{$k})
+                <a href="{{ route('hardwares.show', ['hardware'=> $r->{$k} ?: 0 ] ) }}">{{ isset($r->hardware->Name) ? $r->hardware->Name : "None" }}</a>
               @elseif($k == 'employee_id')
-                <a href="{{ route('employees.show', ['employee'=>$r->{$k} ] ) }}">{{ $r->employee->Name }}</a>
-              @elseif($k == 'purchase_id')
-                <a href="{{ route('purchases.show', ['purchase'=>$r->{$k} ] ) }}">{{ $r->purchase->Invoice }}</a>
+                <a href="{{ route('employees.show', ['employee'=>$r->{$k} ?: 0 ] ) }}">{{ isset($r->employee->Name) ? $r->employee->Name : "None" }}</a>
+              @elseif($k == 'purchase_id' && $r->{$k})
+                <a href="{{ route('purchases.show', ['purchase'=>$r->{$k} ?: 0 ] ) }}">{{ isset($r->purchase->Invoice) ? $r->purchase->Invoice : "None" }}</a>
               @else
                 {{ $r->{$k} }}
               @endif

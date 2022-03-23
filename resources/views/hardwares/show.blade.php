@@ -12,9 +12,9 @@
   <h2>
   <?php if (in_array($k, ['manufacturer_id', 'hwcategory_id'])) {
     if ($k == 'manufacturer_id') { ?>
-      Manufacturer: <a href="{{ route('manufacturers.show', ['manufacturer'=>$res->{$k} ] ) }}">{{ $res->manufacturer->Name }}</a>
+      Manufacturer: <a href="{{ route('manufacturers.show', ['manufacturer'=>$res->{$k} ?: 0 ] ) }}">{{ isset($res->manufacturer->Name) ? $res->manufacturer->Name : 'None'; }}</a>
     <?php } else { ?>
-      Category: <a href="{{ route('hwcategories.show', ['hwcategory'=>$res->{$k} ] ) }}">{{ $res->hwcategory->Name }}</a>
+      Category: <a href="{{ route('hwcategories.show', ['hwcategory'=>$res->{$k} ?: 0 ] ) }}">{{ isset($res->hwcategory->Name) ? $res->hwcategory->Name : "None" }}</a>
     <?php }
     } else { ?>
       {{ $k; }}: {{ $res->{$k}; }}

@@ -19,14 +19,14 @@ class purchaseController extends Controller
      */
 
     protected $casts = ['Price'=>'integer'];
-    public static $controllerName = 'purchases';
-    public static $tableName = 'purchase';
-    public static $validationArray = [
+    protected static $controllerName = 'purchases';
+    protected static $tableName = 'purchase';
+    protected static $validationArray = [
       'Invoice' => ['required','integer','numeric', 'max:2147483647'],
       'Price' => ['required', 'numeric', 'max:2147483647'],
       'PurchaseDate' => ['required', 'date'],
     ];
-    public static $controlName = 'Purchase';
+    protected static $controlName = 'Purchase';
 
     public function test()
     {

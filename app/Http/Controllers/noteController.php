@@ -87,7 +87,7 @@ class noteController extends Controller
      */
     public function show($id)
     {
-      $res= note::findOrFail($id);
+      $res= note::with('unit')->findOrFail($id);
       $valid = self::$validationArray;
       $n = self::$controllerName;
       $m = self::$tableName;

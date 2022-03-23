@@ -46,7 +46,11 @@ Route::get('/hardwares/restore/{id}', [hardwareController::class, 'restore']);
 
 Route::resource('/notes', noteController::class);
 
+Route::get('/notes/restore/{id}', [noteController::class, 'restore']);
+
 Route::resource('/units', unitController::class);
+
+Route::get('/units/restore/{id}', [unitController::class, 'restore']);
 
 // Database Functions will be below Here
 

@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
         ];
 
         $empdata = [
+          ['id'=>0, 'Name'=>'In Storage', 'Email'=>'unitstoragerequest@company.com', 'Phone'=>'0000000000'],
           ['Name'=>'David Brown', 'Email'=>'davidbrown@thisemail.com', 'Phone'=>'0123456789'],
           ['Name'=>'Another Person', 'Email'=>'another@theiremail.com', 'Phone'=>'1234567890'],
           ['Name'=>'This Guy', 'Email'=>'thisguy@geewhizmail.com', 'Phone'=>'0001231234'],

@@ -11,11 +11,11 @@
   @foreach($valid as $k=>$v)
   <h2>
     @if($k == 'hardware_id')
-      Hardware: <a href="{{ route('hardwares.show', ['hardware'=>$res->{$k} ] ) }}">{{ $res->hardware->Name }}</a>
+      Hardware: <a href="{{ route('hardwares.show', ['hardware'=>$res->{$k} ?: 0 ] ) }}">{{ isset($res->hardware->Name) ? $res->hardware->Name : 'None' }}</a>
     @elseif($k == 'employee_id')
-      Employee: <a href="{{ route('employees.show', ['employee'=>$res->{$k} ] ) }}">{{ $res->employee->Name }}</a>
+      Employee: <a href="{{ route('employees.show', ['employee'=>$res->{$k} ?: 0 ] ) }}">{{ isset($res->employee->Name) ? $res->employee->Name : 'None' }}</a>
     @elseif($k == 'purchase_id')
-      Purchase: <a href="{{ route('purchases.show', ['purchase'=>$res->{$k} ] ) }}">{{ $res->purchase->Invoice }}</a>
+      Purchase: <a href="{{ route('purchases.show', ['purchase'=>$res->{$k} ?: 0 ] ) }}">{{ isset($res->purchase->Invoice) ? $res->purchase->Invoice : 'None' }}</a>
     @else
       {{ $k }}: {{ $res->{$k} }}
     @endif

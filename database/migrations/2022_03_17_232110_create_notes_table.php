@@ -15,7 +15,7 @@ class CreateNotesTable extends Migration
     {
         Schema::create('notes', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(App\Models\unit::class)->constrained();
+            $table->foreignIdFor(App\Models\unit::class)->constrained('units')->onDelete('cascade')->onUpdate('cascade');
             $table->string('Service');
             $table->string('Software');
             $table->text('Notes');

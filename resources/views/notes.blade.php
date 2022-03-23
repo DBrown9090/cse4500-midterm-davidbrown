@@ -26,7 +26,7 @@
         <tr>
           <td>{{ $r->id }}</td>
           @foreach($valid as $k=>$v)
-            <td style="white-space: pre-line;">@if($k == 'unit_id')<a href="{{ route('units.show', ['unit'=>$r->{$k} ] ) }}">{{ $r->unit->Name }}</a>@else{{ $r->{$k} }}@endif</td>
+            <td style="white-space: pre-line;">@if($k == 'unit_id' && $r->unit)<a href="{{ route('units.show', ['unit'=>$r->{$k} ] ) }}">{{ $r->unit->Name }}</a>@else{{ $r->{$k} }}@endif</td>
           @endforeach
           <td><a href="{{ route($n.'.show',[(string)$m=>$r->id])}}">View</a></td>
         </tr>

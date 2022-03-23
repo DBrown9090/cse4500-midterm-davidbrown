@@ -29,4 +29,9 @@ class purchase extends Model
     public function PriceUpdate($value) {
         return preg_replace("/[^0-9]/","",$value*100);
     }
+
+    public function unit()
+    {
+      return $this->hasMany(unit::class);
+    }
 }

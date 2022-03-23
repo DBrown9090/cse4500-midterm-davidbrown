@@ -17,7 +17,7 @@ class CreateUnitsTable extends Migration
             $table->id();
             $table->string('Name');
             $table->foreignIdFor(App\Models\hardware::class)->constrained();
-            $table->foreignIdFor(App\Models\employee::class)->constrained();
+            $table->foreignIdFor(App\Models\employee::class)->nullable()->constrained();
             $table->foreignIdFor(App\Models\purchase::class)->constrained();
             $table->softDeletes();
             $table->timestamps();
