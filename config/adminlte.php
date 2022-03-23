@@ -232,29 +232,29 @@ return [
         [
             'text' => 'Units',
             'url'  => 'units',
-            'icon' => 'fas fa-fw fa-calendar-alt',
+            'icon' => 'fas fa-fw fa-laptop',
         ],
         [
             'text' => 'Hardware',
-            'icon' => 'fas fa-fw fa-file',
+            'icon' => 'fas fa-fw fa-laptop-house',
             'submenu' => [
               [
                   'text' => 'Hardware Types',
                   'url'  => 'hardwares',
-                  'icon' => 'fas fa-fw fa-file',
+                  'icon' => 'fas fa-fw fa-microchip',
                   'classes' => 'ml-2',
               ],
               [
                   'text' => 'Manufacturers',
                   'url'  => 'manufacturers',
-                  'icon' => 'fas fa-fw fa-columns',
+                  'icon' => 'fas fa-fw fa-industry',
                   'classes' => 'ml-2',
 
               ],
               [
                   'text' => 'Hardware Categories',
                   'url'  => 'hwcategories',
-                  'icon' => 'fas fa-fw fa-file',
+                  'icon' => 'fas fa-fw fa-hdd',
                   'classes' => 'ml-2',
               ],
             ],
@@ -262,17 +262,17 @@ return [
         [
             'text' => 'Employees',
             'url'  => 'employees',
-            'icon' => 'fas fa-fw fa-calendar-alt',
+            'icon' => 'fas fa-fw fa-users',
         ],
         [
             'text' => 'Purchases',
             'url'  => 'purchases',
-            'icon' => 'fas fa-fw fa-file',
+            'icon' => 'fas fa-fw fa-file-invoice-dollar',
         ],
         [
             'text' => 'Notes',
             'url'  => 'notes',
-            'icon' => 'fas fa-fw fa-calendar-alt',
+            'icon' => 'fas fa-fw fa-sticky-note',
         ],
 
     ],
